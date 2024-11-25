@@ -1,10 +1,10 @@
-import React from "react"; //Test ourStory
-import { Typography, Button } from "@mui/material";
+import React from "react"; 
+import { Button } from "@mui/material";
 
 const OurStory: React.FC = () => {
   return (
     <div className="relative bg-white h-screen align-middle px-16 py-32">
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-1">
         <div className="relative z-10 flex flex-col justify-center h-full text-left text-text pr-12">
           <p className="font-medium text-customRed mb-1">OUR STORY</p>
           <h2 className="text-3xl font-medium mb-8 text-left">
@@ -43,7 +43,7 @@ const OurStory: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="relative flex items-center justify-center pl-12 py-12">
+        <div className="relative flex items-center justify-center pl-12 md:py-16">
           <div className="relative">
             <div className="absolute border border-customRed rounded-md w-full h-full pointer-events-none right-4 top-4 -z-50"></div>
               <img
