@@ -59,19 +59,10 @@ const Hero: React.FC = () => {
         >
           LOREM IPSUM IS SIMPLY DUMMY TEXT
         </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: "0.875rem", md: "1rem" },
-            maxWidth: "650px",
-            marginBottom: 3,
-            color: "#FFFFFF",
-          }}
-        >
+        <p className="text-lg max-w-2xl mb-8 px-4">
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type.
-        </Typography>
+        </p>
 
         <Button
           variant="contained"
@@ -81,7 +72,7 @@ const Hero: React.FC = () => {
             py: 1.5,
             px: 5,
             borderRadius: "5px",
-            fontSize: "1rem",
+            fontSize: "1.2rem",
             textTransform: "none",
           }}
         >
