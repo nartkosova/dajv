@@ -119,7 +119,8 @@ const Header = () => {
               gap: "4px",
             }}
           >
-            {language} <ArrowDropDownIcon style={{ fontSize: "18px", marginLeft: "0" }} />
+            {language}{" "}
+            <ArrowDropDownIcon style={{ fontSize: "18px", marginLeft: "0" }} />
           </Button>
           <Menu
             id="language-menu"
@@ -130,9 +131,15 @@ const Header = () => {
               "aria-labelledby": "language-button",
             }}
           >
-            <MenuItem onClick={() => handleLanguageSelect("EN")}>English</MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("ES")}>Spanish</MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("FR")}>French</MenuItem>
+            <MenuItem onClick={() => handleLanguageSelect("EN")}>
+              English
+            </MenuItem>
+            <MenuItem onClick={() => handleLanguageSelect("ES")}>
+              Spanish
+            </MenuItem>
+            <MenuItem onClick={() => handleLanguageSelect("FR")}>
+              French
+            </MenuItem>
           </Menu>
         </div>
 
@@ -143,7 +150,11 @@ const Header = () => {
             className="text-2xl focus:outline-none"
             aria-label="Toggle menu"
           >
-            {menuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+            {menuOpen ? (
+              <i className="fas fa-times"></i>
+            ) : (
+              <i className="fas fa-bars"></i>
+            )}
           </button>
         </div>
       </div>

@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-       "100": "25rem",
-        "200": "50rem",
-        "18": "4.5rem",
-        "17":"4.25rem",
+        100: "25rem",
+        200: "50rem",
+        18: "4.5rem",
+        17: "4.25rem",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
