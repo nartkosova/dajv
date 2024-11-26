@@ -53,20 +53,22 @@ const features = [
 
 const WhatWeDo: React.FC = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white-100 py-8 mt-8">
+    <div className="flex justify-center items-center min-h-screen bg-white-100 py-18 mt-8">
       <div className="w-full max-w-screen-lg px-4">
         {/* Section Title */}
         <div className="text-center mb-8">
-          <h1 className="text-base font-bold text-[#A01717]">What We Do</h1>
-          <p className="text-xl text-black-600 mt-2">Explore the amazing features.</p>
+        <p className="font-medium text-customRed mb-1">WHAT WE DO</p>
+        <h2 className="text-3xl font-medium mb-16 text-center">
+            LOREM IPSUM IS SIMPLY
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 justify-items-center">
+        <div className="grid grid-cols-1 gap-y-9 sm:grid-cols-2  sm:gap-y-14 xl:grid-cols-4 xl:gap-x-64 xl:gap-y-9 justify-items-center">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-lg p-4 hover:shadow-2xl transition-all duration-300"
-              style={{ width: "240px", height: "220px" }}
+              className="bg-white shadow-md rounded-md p-4 hover:shadow-2xl transition-all duration-300 border border-dividers"
+              style={{ width: "280px", height: "255px" }}
             >
               <div className="flex items-start mb-4 mt-4">
                 <div className={`${feature.color} text-4xl mr-4`}>

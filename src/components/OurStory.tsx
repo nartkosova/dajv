@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 
 const OurStory: React.FC = () => {
   return (
-    <div className="!flex relative bg-white px-24 py-24 items-center justify-center">
+    <div className="!flex relative bg-white px-12 md:px-24 py-18 items-center justify-center">
       <div className="flex flex-col md:flex-row items-center md:items-start ">
         <div className="flex flex-col justify-center md:w-1/2 text-left text-text md:pr-12 mb-12 md:mb-0 self-center">
           <p className="font-medium text-customRed mb-1">OUR STORY</p>
