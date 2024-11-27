@@ -141,83 +141,82 @@ const Header = () => {
               French
             </MenuItem>
           </Menu>
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-2xl focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <i className="fas fa-times"></i>
-            ) : (
-              <i className="fas fa-bars"></i>
-            )}
-          </button>
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-2xl focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <i className="fas fa-times"></i>
+              ) : (
+                <i className="fas fa-bars"></i>
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation */}
+        <nav
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } absolute top-16 left-0 w-full z-50 bg-white md:hidden pt-4`}
+        >
+          <div>
+            <a
+              href="#"
+              className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            >
+              About Us
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            >
+              Latest
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Social Media Icons for Mobile */}
+          <div className="flex justify-center space-x-4 pb-4">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
+            >
+              <i className="fab fa-facebook-f text-lg"></i>
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
+            >
+              <i className="fab fa-instagram text-lg"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
+            >
+              <i className="fab fa-linkedin-in text-lg"></i>
+            </a>
+          </div>
+        </nav>
       </div>
-
-      {/* Mobile Navigation */}
-      <nav
-        className={`${
-          menuOpen ? "block" : "hidden"
-        } absolute top-16 left-0 w-full z-50 bg-white md:hidden pt-4`}
-      >
-        <div>
-          <a
-            href="#"
-            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-          >
-            About Us
-          </a>
-        </div>
-        <div>
-          <a
-            href="#"
-            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-          >
-            Latest
-          </a>
-        </div>
-        <div>
-          <a
-            href="#"
-            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-          >
-            Contact
-          </a>
-        </div>
-
-        {/* Social Media Icons for Mobile */}
-        <div className="flex justify-center space-x-4 pb-4">
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
-          >
-            <i className="fab fa-facebook-f text-lg"></i>
-          </a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
-          >
-            <i className="fab fa-instagram text-lg"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 bg-text text-white flex justify-center items-center rounded hover:bg-[#A01717]"
-          >
-            <i className="fab fa-linkedin-in text-lg"></i>
-          </a>
-        </div>
-      </nav>
-        </div>
-
     </header>
   );
 };

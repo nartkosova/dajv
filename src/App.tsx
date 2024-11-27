@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 import OurStory from "./components/OurStory";
 import WhatWeDo from "./components/WhatWeDo";
 import Header from "./Header/Header";
-import Slider from "./components/Slider"
+import Slider from "./components/Slider";
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <Header />
       <Hero />
       <OurStory />
-      <WhatWeDo/>
-      <Slider/>
+      <WhatWeDo />
+      <Slider />
       <OurStory />
     </div>
   );
