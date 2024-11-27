@@ -36,11 +36,13 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative mx-auto">
+    <div className="relative mx-auto py-16 bg-dividers2 ">
     
       <div className="text-center mb-8">
-        <h1 className="font-medium text-customRed mb-1">Board</h1>
-        <p className="text-3xl font-medium mb-16 text-center">Lorem Ipsum is Simply</p>
+      <p className="font-medium text-customRed mb-1">BOARD</p>
+          <h2 className="text-4xl font-medium mb-20 text-center">
+            LOREM IPSUM IS SIMPLY
+          </h2>
       </div>
 
       
@@ -61,7 +63,7 @@ const Slider = () => {
                 alt={`Slide ${index + 1}`}
                 className="w-[404px] h-[536px] object-cover"
               />
-              <div className="absolute bottom-0 w-full h-[50%] bg-gradient-to-t from-black via-black to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-0 w-full h-[100%] bg-gradient-to-t from-text via-black to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-lg font-semibold">{image.name}</h3>
                 <p className="text-sm">{image.position}</p>
               </div>
@@ -70,7 +72,7 @@ const Slider = () => {
         </div>
 
         
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full px-8 pt-4">
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full px-8 pt-4">
          
           <button
             onClick={prevSlide}
@@ -86,7 +88,7 @@ const Slider = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full ${
-                  currentIndex === index ? "bg-customRed" : "bg-gray-300"
+                  currentIndex === index ? "bg-customRed scale-125" : "border"
                 }`}
               ></button>
             ))}
