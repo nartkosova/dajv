@@ -141,8 +141,6 @@ const Header = () => {
               French
             </MenuItem>
           </Menu>
-        </div>
-
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button
@@ -163,12 +161,12 @@ const Header = () => {
       <nav
         className={`${
           menuOpen ? "block" : "hidden"
-        } absolute top-16 left-0 w-full z-50 bg-white md:hidden`}
+        } absolute top-16 left-0 w-full z-50 bg-white md:hidden pt-4`}
       >
         <div>
           <a
             href="#"
-            className="block py-2 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
           >
             About Us
           </a>
@@ -176,7 +174,7 @@ const Header = () => {
         <div>
           <a
             href="#"
-            className="block py-2 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
           >
             Latest
           </a>
@@ -184,14 +182,14 @@ const Header = () => {
         <div>
           <a
             href="#"
-            className="block py-2 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
+            className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
           >
             Contact
           </a>
         </div>
 
         {/* Social Media Icons for Mobile */}
-        <div className="flex justify-center space-x-4 mt-4">
+        <div className="flex justify-center space-x-4 pb-4">
           <a
             href="https://www.facebook.com"
             target="_blank"
@@ -218,6 +216,8 @@ const Header = () => {
           </a>
         </div>
       </nav>
+        </div>
+
     </header>
   );
 };
