@@ -12,6 +12,7 @@ function App() {
       <OurStory />
       <WhatWeDo/>
       <Slider/>
+      <OurStory />
     </div>
   );
 }
