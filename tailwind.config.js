@@ -18,6 +18,7 @@ module.exports = {
       text: "#111111",
       dividers: "#D9D9D9",
       dividers2: "#F9F9F9",
+      dividers3: "#545454",
       white: "#ffff",
     },
   },
