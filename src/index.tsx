@@ -36,7 +36,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-      <App />
+    <App />
   </ThemeProvider>,
 );
 
