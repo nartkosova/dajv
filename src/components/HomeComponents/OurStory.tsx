@@ -3,14 +3,14 @@ import { Button } from "@mui/material";
 
 const OurStory: React.FC = () => {
   return (
-    <div className="!flex relative bg-white px-8 lg:px-16 pt-28 pb-28 items-center justify-center">
+    <div className="!flex relative bg-white px-8 lg:px-20 pt-28 pb-28 items-center justify-center">
       <div className="flex flex-col lg:flex-row items-center lg:items-start ">
         <div className="flex flex-col justify-center lg:w-1/2 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-center">
           <p className="font-medium text-customRed mb-1">OUR STORY</p>
           <h2 className="text-4xl font-medium mb-8 text-left">
             LOREM IPSUM IS SIMPLY
           </h2>
-          <p className="text-lg max-w-2xl mb-8">
+          <p className="text-lg mb-8">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -44,7 +44,7 @@ const OurStory: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-end content-start max-w-2xl lg:w-1/2 self-center">
+        <div className="relative flex items-center justify-end content-start lg:w-1/2 self-center">
           <div className="relative z-10 lg:size-5/6 size-full">
             <div className="absolute border border-customRed rounded-md w-full h-full pointer-events-none right-6 top-6 -z-10"></div>
             <img
