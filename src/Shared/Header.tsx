@@ -31,8 +31,8 @@ const Header = () => {
       style={{ width: "100%", height: "80px" }}
     >
       <div
-        className="flex justify-between items-center px-8 lg:px-16 mx-auto"
-        style={{ maxWidth: "1440px", width: "100%", height: "100%" }}
+        className="flex justify-between items-center px-8 lg:px-16"
+        style={{ width: "100%", height: "100%" }}
       >
         {/* Logo */}
         <div className="flex items-center">
@@ -42,7 +42,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex md:justify-center md:space-x-2 md:w-auto md:bg-transparent ml-17">
+        <nav className="hidden md:flex md:justify-center md:space-x-2 md:w-auto md:bg-transparent ml-18">
           <div>
             <a
               href="#"
