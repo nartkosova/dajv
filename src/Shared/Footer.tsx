@@ -48,7 +48,7 @@ const Footer = () => {
                 <i className="fas fa-envelope mr-2"></i> email@address.com
               </li>
             </ul>
-          <div className="flex flex-row justify-between md:pt-0 pt-6">
+          <div className="flex flex-row justify-between md:pt-0 pt-6 md:space-x-48 lg:space-x-64 xl:space-x-80">
           <div>
             <h2 className="font-bold mb-2">Title</h2>
             <ul className="space-y-2">
@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="">
             <h2 className="font-bold mb-2">Title</h2>
             <ul className="space-y-2">
               <li>
