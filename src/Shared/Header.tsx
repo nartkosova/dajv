@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Button } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useTranslation } from "react-i18next"
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [language, setLanguage] = useState("EN");
+  const { t, i18n } = useTranslation("header")
   const [menuOpen, setMenuOpen] = useState(false);
   const open = Boolean(anchorEl);
 
@@ -16,11 +17,10 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const handleLanguageSelect = (lang: string) => {
-    setLanguage(lang);
-    setAnchorEl(null);
-  };
-
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang)
+    handleClose()
+  }
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -48,23 +48,23 @@ const Header = () => {
               href="#"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
-              About Us
+              {t("about")}
             </a>
           </div>
           <div>
             <a
               href="#"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-            >
-              Latest
+              >
+              {t("latest")}
             </a>
           </div>
           <div>
             <a
               href="#"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-            >
-              Contact
+              >
+              {t("contact")}
             </a>
           </div>
         </nav>
@@ -118,7 +118,7 @@ const Header = () => {
               gap: "4px",
             }}
           >
-            {language}{" "}
+            {i18n.language.toUpperCase()}{" "}
             <ArrowDropDownIcon style={{ fontSize: "18px", marginLeft: "0" }} />
           </Button>
           <Menu
@@ -130,14 +130,14 @@ const Header = () => {
               "aria-labelledby": "language-button",
             }}
           >
-            <MenuItem onClick={() => handleLanguageSelect("EN")}>
+            <MenuItem onClick={() => handleLanguageChange("DE")}>
+              German
+            </MenuItem>
+            <MenuItem onClick={() => handleLanguageChange("EN")}>
               English
             </MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("ES")}>
-              Spanish
-            </MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("FR")}>
-              French
+            <MenuItem onClick={() => handleLanguageChange("AL")}>
+              Albanian
             </MenuItem>
           </Menu>
           {/* Mobile Menu Toggle */}
