@@ -61,7 +61,7 @@ const features = [
 
 const WhatWeDo: React.FC = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white-100 pb-28 px-8">
+    <div className="flex justify-center items-center min-h-screen bg-white-100 pb-28 px-8 lg:px-20">
       <div className="w-full max-w-screen-lg">
         {/* Section Title */}
         <div className="text-center mb-8 ">
