@@ -31,7 +31,7 @@ const Header = () => {
       style={{ width: "100%", height: "80px" }}
     >
       <div
-        className="flex justify-between items-center px-8 lg:px-16"
+        className="flex justify-between items-center px-8 lg:px-20"
         style={{ width: "100%", height: "100%" }}
       >
         {/* Logo */}
