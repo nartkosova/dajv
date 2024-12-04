@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation("footer")
+  const { t } = useTranslation("footer");
   return (
     <footer className="bg-text py-12 text-white">
       <div className="lg:px-20 px-8">
@@ -17,41 +17,41 @@ const Footer = () => {
               <i className="fas fa-envelope mr-2"></i> email@address.com
             </li>
           </ul>
-            <div className="">
-              <h2 className="font-bold mb-2">{t("pages")}</h2>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:underline">
+          <div className="">
+            <h2 className="font-bold mb-2">{t("pages")}</h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:underline">
                   {t("about")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
                   {t("latest")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
                   {t("contact")}
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-bold mb-2">{t("links")}</h2>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:underline">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-bold mb-2">{t("links")}</h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:underline">
                   {t("join")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
                   {t("ask")}
-                  </a>
-                </li>
-              </ul>
-            </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-dividers3 my-6"></div>

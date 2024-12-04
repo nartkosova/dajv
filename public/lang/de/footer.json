@@ -1,12 +1,12 @@
 {
-    "pages": "Seiten",
-    "about": "Über Uns",
-    "latest": "Aktuelles",
-    "contact": "Kontakt",
+  "pages": "Seiten",
+  "about": "Über Uns",
+  "latest": "Aktuelles",
+  "contact": "Kontakt",
 
-    "links": "Andere Links",
-    "join": "Mitglied werden",
-    "ask": "Sie haben Fragen",
+  "links": "Andere Links",
+  "join": "Mitglied werden",
+  "ask": "Sie haben Fragen",
 
-    "privacy": "Impressum Datenschutz"    
+  "privacy": "Impressum Datenschutz"
 }

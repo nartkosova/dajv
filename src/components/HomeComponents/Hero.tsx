@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
-  const { t, i18n } = useTranslation("hero")
+  const { t, i18n } = useTranslation("hero");
   return (
     <Box
       sx={{
@@ -42,14 +42,12 @@ const Hero: React.FC = () => {
             marginBottom: 2,
             maxWidth: "750px",
             color: "#FFFFFF",
-            textTransform: "uppercase"
+            textTransform: "uppercase",
           }}
         >
           {t("hero")}
         </Typography>
-        <p className="text-lg max-w-2xl mb-8 px-4">
-          {t("hero_description")}
-        </p>
+        <p className="text-lg max-w-2xl mb-8 px-4">{t("hero_description")}</p>
 
         <Button
           variant="contained"

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Button } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { t, i18n } = useTranslation("header")
+  const { t, i18n } = useTranslation("header");
   const [menuOpen, setMenuOpen] = useState(false);
   const open = Boolean(anchorEl);
 
@@ -18,9 +18,9 @@ const Header = () => {
   };
 
   const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang)
-    handleClose()
-  }
+    i18n.changeLanguage(lang);
+    handleClose();
+  };
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -55,7 +55,7 @@ const Header = () => {
             <a
               href="#"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-              >
+            >
               {t("latest")}
             </a>
           </div>
@@ -63,7 +63,7 @@ const Header = () => {
             <a
               href="#"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
-              >
+            >
               {t("contact")}
             </a>
           </div>

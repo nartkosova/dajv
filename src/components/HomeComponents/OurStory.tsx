@@ -3,14 +3,14 @@ import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 interface OurStoryProps {
-  our: string,
-  title: string,
-  content: string,
-  image: string
+  our: string;
+  title: string;
+  content: string;
+  image: string;
 }
 
-const OurStory: React.FC<OurStoryProps> = ({our, title, content, image}) => {
-  const { t } = useTranslation("ourStory")
+const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image }) => {
+  const { t } = useTranslation("ourStory");
   return (
     <div className="!flex relative bg-white px-8 lg:px-20 pt-28 pb-28 items-center justify-center">
       <div className="flex flex-col lg:flex-row items-center lg:items-start ">
@@ -19,9 +19,7 @@ const OurStory: React.FC<OurStoryProps> = ({our, title, content, image}) => {
           <h2 className="text-4xl font-medium mb-8 text-left uppercase">
             {title}
           </h2>
-          <p className="text-lg mb-8">
-            {content}
-          </p>
+          <p className="text-lg mb-8">{content}</p>
           <div>
             <Button
               variant="contained"
