@@ -2,6 +2,7 @@
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +10,7 @@ import "swiper/css/pagination";
 
 export default () => {
   const swiperRef = useRef<any>(null);
+  const { t } = useTranslation("board");
 
   const handleNextSlide = () => {
     if (swiperRef.current) {
@@ -25,8 +27,8 @@ export default () => {
   return (
     <div className="relative ">
       <div className="text-center mb-8">
-        <p className="font-medium text-customRed mb-1">BOARD</p>
-        <h2 className="text-4xl font-medium mb-20 text-center">
+        <p className="font-medium text-customRed mb-1 uppercase">{t("board")}</p>
+        <h2 className="text-3xl font-medium mb-20 text-center">
           LOREM IPSUM IS SIMPLY
         </h2>
       </div>

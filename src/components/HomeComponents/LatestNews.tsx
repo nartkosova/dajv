@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 interface News {
   id: number;
   title: string;
@@ -9,6 +11,7 @@ interface News {
 }
 
 const LatestNews: React.FC = () => {
+  const { t } = useTranslation("latestNews");
   const news: News[] = [
     {
       id: 1,
@@ -82,8 +85,8 @@ const LatestNews: React.FC = () => {
     <div className="flex flex-col justify-center items-center min-h-screen bg-white-100 pb-28 px-8 lg:px-16 ">
       <div>
         <div className="text-center mb-8 ">
-          <p className="font-medium text-customRed mb-1">LATEST NEWS</p>
-          <h2 className="text-4xl font-medium mb-12 sm:mb-20 text-center">
+          <p className="font-medium text-customRed mb-1">{t("latest")}</p>
+          <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center">
             LOREM IPSUM IS SIMPLY
           </h2>
         </div>
