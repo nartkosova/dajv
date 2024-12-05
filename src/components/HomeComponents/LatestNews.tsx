@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 interface News {
@@ -85,7 +86,7 @@ const LatestNews: React.FC = () => {
     <div className="flex flex-col justify-center items-center min-h-screen bg-white-100 pb-28 px-8 lg:px-16 ">
       <div>
         <div className="text-center mb-8 ">
-          <p className="font-medium text-customRed mb-1">{t("latest")}</p>
+          <p className="font-medium text-customRed mb-1 uppercase">{t("latest")}</p>
           <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center">
             LOREM IPSUM IS SIMPLY
           </h2>
@@ -95,7 +96,7 @@ const LatestNews: React.FC = () => {
           {news.map((news) => (
             <div
               key={news.id}
-              className="border border-dividers rounded-md shadow-md hover:shadow-xl transition-all duration-300 pb-6"
+              className="border border-dividers rounded-md hover:shadow-xl transition-all duration-300 pb-6 mb-8"
               style={{ maxWidth: "390px" }}
             >
               <div className="bg-gray-200 rounded-t-lg">
@@ -134,6 +135,30 @@ const LatestNews: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className="justify-center items-center flex">
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "transparent",
+                ":hover": {
+                  backgroundColor: "primary.main",
+                  color: "background.default",
+                },
+                py: 1.5,
+                px: 5,
+                borderRadius: "5px",
+                fontSize: "1.2rem",
+                textTransform: "none",
+                color: "primary.main",
+
+                border: "solid",
+                borderColor: "primary.main",
+                borderWidth: "1px",
+              }}
+            >
+              {t("read_more")}
+            </Button>
+              </div>
       </div>
     </div>
   );

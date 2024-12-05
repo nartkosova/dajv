@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-text py-12 text-white">
       <div className="lg:px-20 px-8">
-        <div className="flex md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
           <ul className="space-y-6">
             <li className="flex items-center">
               <i className="fas fa-phone-alt mr-2"></i> +1 234 5678 90
@@ -17,7 +17,7 @@ const Footer = () => {
               <i className="fas fa-envelope mr-2"></i> email@address.com
             </li>
           </ul>
-          <div className="">
+          <div>
             <h2 className="font-bold mb-2">{t("pages")}</h2>
             <ul className="space-y-2">
               <li>
@@ -52,12 +52,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="border-t border-dividers3 my-6"></div>
-
-        <div className="flex justify-between items-center text-sm">
-          <p>©2024 DAJV {t("privacy")}</p>
           <div className="flex space-x-4 mt-0">
             <a
               href="https://www.facebook.com"
@@ -84,6 +78,13 @@ const Footer = () => {
               <i className="fab fa-linkedin-in text-lg"></i>
             </a>
           </div>
+        </div>
+
+        <div className="border-t border-dividers3 my-6"></div>
+
+        <div className="flex justify-between items-center text-sm">
+          <p>©2024 DAJV {t("privacy")} | Veranstaltungs-AGB</p>
+          <p>Delivered by Telos Labs</p>
         </div>
       </div>
     </footer>

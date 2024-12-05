@@ -4,11 +4,12 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import HttpBackend from "i18next-http-backend";
 
 i18n
-  .use(HttpBackend) // Load translations from files
-  .use(LanguageDetector) // Detect user's language
-  .use(initReactI18next) // Pass to react-i18next
+  .use(HttpBackend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
-    fallbackLng: "de", // Default language
+    lng: "de", // Default language
+    fallbackLng: "de",
     debug: true,
     ns: [
       "header",
@@ -21,11 +22,16 @@ i18n
     ],
     defaultNS: "header",
     interpolation: {
-      escapeValue: false, // React already escapes output
+      escapeValue: false,
     },
     backend: {
-      loadPath: "/lang/{{lng}}/{{ns}}.json", // Path to translation files
+      loadPath: "/lang/{{lng}}/{{ns}}.json",
     },
+    detection: {
+      order: ["querystring", "localStorage", "cookie", "navigator"],
+      caches: ["localStorage", "cookie"],
+    },
+    saveMissing: true, // Save missing keys (optional, for debugging)
   });
 
 export default i18n;

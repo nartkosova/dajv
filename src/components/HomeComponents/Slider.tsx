@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 export default () => {
   const swiperRef = useRef<any>(null);
-  const { t } = useTranslation("board");
+  const { t } = useTranslation("slider");
 
   const handleNextSlide = () => {
     if (swiperRef.current) {
@@ -25,17 +25,18 @@ export default () => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative bg-dividers2 h-screen">
       <div className="text-center mb-8">
-        <p className="font-medium text-customRed mb-1 uppercase">{t("board")}</p>
+        <p className="font-medium text-customRed mb-1 uppercase bg-dividers2">{t("board")}</p>
         <h2 className="text-3xl font-medium mb-20 text-center">
           LOREM IPSUM IS SIMPLY
         </h2>
       </div>
-      <div className="">
+      <div>
         <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
+          navigation= {true}
           spaceBetween={20}
           breakpoints={{
             320: {
@@ -82,16 +83,6 @@ export default () => {
             />
           </SwiperSlide>
         </Swiper>
-      </div>
-      <div>
-        <button
-          className="swiper-button-prev text-sm "
-          onClick={handlePrevSlide}
-        ></button>
-        <button
-          className="swiper-button-next text-sm"
-          onClick={handleNextSlide}
-        ></button>
       </div>
     </div>
   );
