@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Button } from "@mui/material";
+import { useNavigate, useParams } from "react-router-dom"
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTranslation } from "react-i18next";
 
@@ -9,18 +10,31 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const open = Boolean(anchorEl);
 
+  const navigate = useNavigate()
+  const { lang } = useParams()
+
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang);
-    handleClose();
-  };
+  const handleLanguageChange = (newLang: string) => {
+    if (newLang !== lang) {
+      i18n.changeLanguage(newLang.toLowerCase())
+      if (newLang.toLowerCase() === 'de') {
+        navigate('/')
+      } else {
+        navigate(`/${newLang.toLowerCase()}`)
+      }
+    }
+    handleClose()
+  }
+  
+  
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
