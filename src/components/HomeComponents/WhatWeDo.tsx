@@ -1,70 +1,35 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+const WhatWeDo: React.FC = () => {
+  const { t } = useTranslation("whatWeDo");
 const features = [
+  
   {
     icon: "fas fa-lightbulb",
-    color: "text-customRed",
-    title: "Lorem Ipsum Dolor",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.",
+    title: t("1"),
+    description: t("1_content")
   },
   {
     icon: "fas fa-leaf",
-    color: "text-customRed",
-    title: "Sed Do Eiusmod",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
+    title: t("2"),
+    description: t("2_content")
   },
   {
     icon: "fas fa-heart",
-    color: "text-customRed",
-    title: "Nulla Facilisi",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec ante. Sed lacinia, urna non tincidunt mattis.",
+    title: t("3"),
+    description: t("3_content")
   },
   {
     icon: "fas fa-chart-line",
-    color: "text-customRed",
-    title: "Curabitur Sit Amet",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper.",
-  },
-  {
-    icon: "fas fa-rocket",
-    color: "text-customRed",
-    title: "Integer Nec Odio",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-  },
-  {
-    icon: "fas fa-users",
-    color: "text-customRed",
-    title: "Ut Nec Odio",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Ut nec odio.",
-  },
-  {
-    icon: "fas fa-cog",
-    color: "text-customRed",
-    title: "Sed Cursus Ante",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-  },
-  {
-    icon: "fas fa-shield-alt",
-    color: "text-customRed",
-    title: "Nam Nec Ante",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec ante. Sed lacinia, urna non tincidunt mattis.",
+    title: t("4"),
+    description: t("4_content")
   },
 ];
 
-const WhatWeDo: React.FC = () => {
-  const { t } = useTranslation("whatWeDo");
   return (
     <div className="flex justify-center items-center min-h-screen bg-white-100 pb-28 px-8 lg:px-20">
-      <div className="w-full max-w-screen-lg">
+      <div className="w-screen">
         <div className="text-center mb-8  max-w-3xl mx-auto">
           <p className="font-medium text-customRed mb-1 uppercase">{t("what_we_do")}</p>
           <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center uppercase">
@@ -72,24 +37,21 @@ const WhatWeDo: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-9 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-14 xl:grid-cols-4 xl:gap-x-64 xl:gap-y-9 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-11">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-md p-4 hover:shadow-xl transition-all duration-300 border self-center border-dividers"
-              style={{ width: "280px", height: "255px" }}
+              className="flex flex-col justify-center bg-white rounded-md p-4 hover:shadow-xl transition-all duration-300 border self-center border-dividers max-w-80 lg:max-w-xl min-h-80 items-center"
+              // style={{ maxWidth: "600px", minHeight: "314px" }}
             >
-              <div className="flex items-start mb-4 mt-4">
-                <div className={`${feature.color} text-4xl mr-4`}>
-                  <i className={feature.icon}></i>
+                <div className={`text-customRed text-6xl self-start`}>
+                  <i className={feature.icon}></i> 
                 </div>
-              </div>
-
-              <div className="flex flex-col justify-start mt-4">
+              <div className="flex flex-col justify-start">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-gray-600 line-clamp-3">
+                <p className="text-gray-600">
                   {feature.description}
                 </p>
               </div>

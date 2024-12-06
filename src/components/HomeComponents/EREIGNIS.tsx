@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa"; // For location icon
 
@@ -54,16 +55,15 @@ const EREIGNIS = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen p-4">
-      {/* Header section */}
-      <div className="text-center mb-8">
-        <p className="font-medium text-customRed mb-1">BOARD</p>
-        <h2 className="text-4xl font-medium mb-20">LOREM IPSUM IS SIMPLY</h2>
-      </div>
-
-      {/* Grid section */}
+    <div className="flex flex-col justify-center items-center min-h-screen pb-28 px-8 lg:px-20 ">
+        <div className="text-center mb-8 ">
+          <p className="font-medium text-customRed mb-1 uppercase">EVENTS</p>
+          <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center">
+            LOREM IPSUM IS SIMPLY
+          </h2>
+    </div>
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-11 gap-y-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-8"
         style={{
          
         }}
@@ -71,8 +71,8 @@ const EREIGNIS = () => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="border rounded-lg overflow-hidden"
-            style={{ width: "300px", height: "344px" }}
+            className="border rounded-md border-dividers overflow-hidden hover:shadow-xl transition-all duration-300"
+            style={{ width: "300px", maxHeight: "344px" }}
           >
             <img
               src={item.image}
@@ -88,12 +88,11 @@ const EREIGNIS = () => {
                 </div>
               </div>
               <p
-                className="mt-4 text-lg text-blue-600"
+                className="my-4 text-lg text-blue-600"
                 style={{
                   fontWeight: 600,
                   fontSize: "18px",
                   lineHeight: "26px",
-                  marginBottom: "16px" // Added space below the title
                 }}
               >
                 {item.title}
@@ -102,6 +101,29 @@ const EREIGNIS = () => {
           </div>
         ))}
       </div>
+                    <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "transparent",
+                ":hover": {
+                  backgroundColor: "primary.main",
+                  color: "background.default",
+                },
+                py: 1.5,
+                px: 5,
+                borderRadius: "5px",
+                fontSize: "1.2rem",
+                textTransform: "none",
+                color: "primary.main",
+
+                border: "solid",
+                borderColor: "primary.main",
+                borderWidth: "1px",
+              }}
+            >
+              {/* {t("read_more")} */}
+              Read More
+            </Button>
     </div>
   );
 };
