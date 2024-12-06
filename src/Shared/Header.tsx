@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu, MenuItem, Button } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -60,12 +61,12 @@ const Header = () => {
             </a>
           </div>
           <div>
-            <a
-              href="#"
+            <NavLink
+             to= "/contact"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("contact")}
-            </a>
+            </NavLink>
           </div>
         </nav>
 
@@ -180,7 +181,7 @@ const Header = () => {
           </div>
           <div>
             <a
-              href="#"
+              href="/contact"
               className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               Contact

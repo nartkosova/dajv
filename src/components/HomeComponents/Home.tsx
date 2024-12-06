@@ -6,6 +6,7 @@ import LatestNews from "./LatestNews";
 import { useTranslation } from "react-i18next";
 import EREIGNIS from "./EREIGNIS";
 
+
 function Home() {
   const { t: tOurStory } = useTranslation("ourStory");
   const { t: tMember } = useTranslation("member");
@@ -28,6 +29,7 @@ function Home() {
       />
       <LatestNews />
       <EREIGNIS/>
+      
     </div>
   );
 }
