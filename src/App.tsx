@@ -4,6 +4,7 @@ import Header from "./Shared/Header";
 import Footer from "./Shared/Footer";
 import "./i18n";
 import { I18nextProvider, useTranslation } from "react-i18next";
+import Contact from "./components/ContactForm/Contact";
 
 function App() {
   const { i18n } = useTranslation();
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path ="/contact" element={<Contact/>} />
             <Route path="/:lang" element={<Home />} />
           </Routes>
           <Footer />
