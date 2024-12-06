@@ -27,7 +27,9 @@ export default () => {
   return (
     <div className="relative bg-dividers2 h-screen">
       <div className="text-center mb-8">
-        <p className="font-medium text-customRed mb-1 uppercase bg-dividers2">{t("board")}</p>
+        <p className="font-medium text-customRed mb-1 uppercase bg-dividers2">
+          {t("board")}
+        </p>
         <h2 className="text-3xl font-medium mb-20 text-center">
           LOREM IPSUM IS SIMPLY
         </h2>
@@ -36,7 +38,7 @@ export default () => {
         <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          navigation= {true}
+          navigation={true}
           spaceBetween={20}
           breakpoints={{
             320: {
