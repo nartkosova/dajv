@@ -50,7 +50,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="font-bold text-3xl text-[#A01717]">
-            <a href="#">LOGO</a>
+          <NavLink to="/">Logo</NavLink>
           </div>
         </div>
 
