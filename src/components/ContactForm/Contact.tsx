@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // Importing React Icons
 
@@ -80,14 +81,15 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 md:p-12 shadow-lg rounded-lg space-y-6 md:space-y-0 md:space-x-12">
-      {/* Left Section */}
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-16 bg-white px-8 lg:px-20 shadow-lg rounded-md space-y-6 md:space-y-0 md:space-x-12">
       <div className="space-y-4 md:w-1/2">
-        <h2 className="text-customRed font-bold text-sm uppercase">Kontakt</h2>
-        <h3 className="text-3xl font-bold text-gray-800 pb-4">
-          Wir freuen uns auf Ihre Nachricht
-        </h3>
-        <p className="text-gray-600 text-lg">
+      <p className="font-medium text-customRed mb-1 uppercase">
+            contact
+          </p>
+          <h2 className="text-3xl font-semibold mb-12 sm:mb-20 text-left">
+            LOREM IPSUM IS SIMPLY
+          </h2>
+        <p className="text-text text-lg">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         </p>
         <div className="space-y-4 mt-6 ">
@@ -107,14 +109,13 @@ const Contact: React.FC = () => {
       </div>
 
 
-      {/* Right Section */}
       <form
-        className="bg-gray-100 rounded-lg p-6 w-full md:w-1/2 shadow-md"
+        className="bg-gray-100 rounded-lg p-6 w-full md:w-1/2 shadow-xl"
         onSubmit={handleSubmit}
       >
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="anrede" className="text-gray-700 text-sm">
+            <label htmlFor="anrede" className="text-text text-sm">
               Anrede*
             </label>
             <input
@@ -123,12 +124,12 @@ const Contact: React.FC = () => {
               type="text"
               value={formData.anrede}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
               required
             />
           </div>
           <div>
-            <label htmlFor="titel" className="text-gray-700 text-sm">
+            <label htmlFor="titel" className="text-text text-sm">
               Titel
             </label>
             <input
@@ -137,11 +138,11 @@ const Contact: React.FC = () => {
               type="text"
               value={formData.titel}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
             />
           </div>
           <div>
-            <label htmlFor="vorname" className="text-gray-700 text-sm">
+            <label htmlFor="vorname" className="text-text text-sm">
               Vorname*
             </label>
             <input
@@ -150,12 +151,12 @@ const Contact: React.FC = () => {
               type="text"
               value={formData.vorname}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
               required
             />
           </div>
           <div>
-            <label htmlFor="nachname" className="text-gray-700 text-sm">
+            <label htmlFor="nachname" className="text-text text-sm">
               Nachname*
             </label>
             <input
@@ -164,12 +165,12 @@ const Contact: React.FC = () => {
               type="text"
               value={formData.nachname}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
               required
             />
           </div>
           <div>
-            <label htmlFor="email" className="text-gray-700 text-sm">
+            <label htmlFor="email" className="text-text text-sm">
               E-Mail-Adresse*
             </label>
             <input
@@ -178,12 +179,12 @@ const Contact: React.FC = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
               required
             />
           </div>
           <div>
-            <label htmlFor="telefon" className="text-gray-700 text-sm">
+            <label htmlFor="telefon" className="text-text text-sm">
               Telefon
             </label>
             <input
@@ -192,12 +193,12 @@ const Contact: React.FC = () => {
               type="tel"
               value={formData.telefon}
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+              className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
             />
           </div>
         </div>
         <div className="mt-4">
-          <label htmlFor="betreff" className="text-gray-700 text-sm">
+          <label htmlFor="betreff" className="text-text text-sm">
             Betreff*
           </label>
           <input
@@ -206,12 +207,12 @@ const Contact: React.FC = () => {
             type="text"
             value={formData.betreff}
             onChange={handleChange}
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+            className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
             required
           />
         </div>
         <div className="mt-4">
-          <label htmlFor="nachricht" className="text-gray-700 text-sm">
+          <label htmlFor="nachricht" className="text-text text-sm">
             Ihre Nachricht
           </label>
           <textarea
@@ -220,7 +221,7 @@ const Contact: React.FC = () => {
             rows={4}
             value={formData.nachricht}
             onChange={handleChange}
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm focus:ring-red-500 focus:border-red-500"
+            className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
           ></textarea>
         </div>
         
@@ -240,10 +241,10 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Button styling */}
+        <div className="flex justify-center">
         <button
           type="submit"
-          className={`mt-6 w-[174px] h-[58px] bg-customRed justify-center text-white py-2 px-4 rounded-[4px] ml-56 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+          className={`mt-6 w-[174px] h-[58px] bg-customRed justify-center text-white py-2 px-4 rounded-[4px] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
             isSubmitting ? "opacity-50" : ""
           }`}
           disabled={isSubmitting}
@@ -253,13 +254,14 @@ const Contact: React.FC = () => {
 
         {submitMessage && (
           <p
-            className={`mt-4 text-sm ${
-              submitMessage.includes("Fehler") ? "text-red-600" : "text-green-600"
-            }`}
+          className={`p-4 text-sm ${
+            submitMessage.includes("Fehler") ? "text-customRed" : "text-text"
+          }`}
           >
             {submitMessage}
           </p>
         )}
+        </div>
       </form>
     </div>
   );

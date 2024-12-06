@@ -6,7 +6,7 @@ const Footer = () => {
 <footer className="bg-text py-12 text-white">
   <div className="lg:px-20 px-8">
     <div
-      className="flex flex-wrap justify-between  gap-8 md:gap-x-32"
+      className="flex flex-wrap justify-between gap-6"
     >
       <ul className="space-y-6 flex-1 min-w-[200px]">
         <li className="flex items-center">
@@ -54,7 +54,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="flex space-x-4 mt-0 flex-1 min-w-[200px]">
+      <div className="flex space-x-4 mt-0 flex-1 min-w-[200px] ">
         <a
           href="https://www.facebook.com"
           target="_blank"

@@ -12,7 +12,7 @@ interface OurStoryProps {
 const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image }) => {
   const { t } = useTranslation("ourStory");
   return (
-    <div className="!flex relative bg-white px-8 lg:px-20 pt-28 pb-28 items-center justify-center">
+    <div className="!flex relative bg-white px-8 lg:px-20 py-28 items-center justify-center">
       <div className="flex flex-col lg:flex-row items-center lg:items-start ">
         <div className="flex flex-col justify-center lg:w-1/2 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-center">
           <p className="font-medium text-customRed mb-1 uppercase">{our}</p>
