@@ -13,6 +13,7 @@ interface News {
 
 const LatestNews: React.FC = () => {
   const { t } = useTranslation("latestNews");
+
   const news: News[] = [
     {
       id: 1,
@@ -47,46 +48,15 @@ const LatestNews: React.FC = () => {
       publisher: "Publisher Name",
       date: "29 Nov 2024",
     },
-    {
-      id: 4,
-      title: "Modern Use of Lorem Ipsum",
-      topic: "Topic 4",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image:
-        "https://s3-alpha-sig.figma.com/img/5d5e/8284/5d3abe2fcad0b544fec8284e9ce0ef49?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpWtSM--AOXykTtn~NnCQgeR6osDEx8JEuqBho7W603I3jl5KOU3iL52WeK2tyJJ7IfnTS~WYf1mcmbZiiqKRS~sGDyCGQXF-2uTO~GKz0UjlbXFmyD8xxhYxw~zZodvNV~e7teC~~2we38sUrztuWaVR~C9NsgdlGD5UiltQk97O8M~Qxmbs1MRY7OKMmZdsLrcgjDFm~HLVIPGW5d5dEk34uFL~cbVn8Rkt6BQnh8JHPyjLWbF8vmJg-KTqngZskhMIeRY-GoXRVLmB4cMoPTo224IJHES8bjpFMTtKWjghCFoCsVu1~lj57q59NLi6p9vl944K7qlg4-uV8Hl~w__",
-      publisher: "Publisher Name",
-      date: "28 Nov 2024",
-    },
-    {
-      id: 5,
-      title: "Why Lorem Ipsum?",
-      topic: "Topic 5",
-      description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image:
-        "https://s3-alpha-sig.figma.com/img/5d5e/8284/5d3abe2fcad0b544fec8284e9ce0ef49?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpWtSM--AOXykTtn~NnCQgeR6osDEx8JEuqBho7W603I3jl5KOU3iL52WeK2tyJJ7IfnTS~WYf1mcmbZiiqKRS~sGDyCGQXF-2uTO~GKz0UjlbXFmyD8xxhYxw~zZodvNV~e7teC~~2we38sUrztuWaVR~C9NsgdlGD5UiltQk97O8M~Qxmbs1MRY7OKMmZdsLrcgjDFm~HLVIPGW5d5dEk34uFL~cbVn8Rkt6BQnh8JHPyjLWbF8vmJg-KTqngZskhMIeRY-GoXRVLmB4cMoPTo224IJHES8bjpFMTtKWjghCFoCsVu1~lj57q59NLi6p9vl944K7qlg4-uV8Hl~w__",
-      publisher: "Publisher Name",
-      date: "26 Nov 2024",
-    },
-    {
-      id: 6,
-      title: "Lorem Ipsum in Design",
-      topic: "Topic 6",
-      description:
-        "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image:
-        "https://s3-alpha-sig.figma.com/img/5d5e/8284/5d3abe2fcad0b544fec8284e9ce0ef49?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpWtSM--AOXykTtn~NnCQgeR6osDEx8JEuqBho7W603I3jl5KOU3iL52WeK2tyJJ7IfnTS~WYf1mcmbZiiqKRS~sGDyCGQXF-2uTO~GKz0UjlbXFmyD8xxhYxw~zZodvNV~e7teC~~2we38sUrztuWaVR~C9NsgdlGD5UiltQk97O8M~Qxmbs1MRY7OKMmZdsLrcgjDFm~HLVIPGW5d5dEk34uFL~cbVn8Rkt6BQnh8JHPyjLWbF8vmJg-KTqngZskhMIeRY-GoXRVLmB4cMoPTo224IJHES8bjpFMTtKWjghCFoCsVu1~lj57q59NLi6p9vl944K7qlg4-uV8Hl~w__",
-      publisher: "Publisher Name",
-      date: "19 Nov 2024",
-    },
   ];
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-white-100 pb-28 px-8 lg:px-16 ">
       <div>
         <div className="text-center mb-8 ">
-          <p className="font-medium text-customRed mb-1 uppercase">{t("latest")}</p>
+          <p className="font-medium text-customRed mb-1 uppercase">
+            {t("latest")}
+          </p>
           <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center">
             LOREM IPSUM IS SIMPLY
           </h2>
@@ -135,30 +105,31 @@ const LatestNews: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="justify-center items-center flex">
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "transparent",
-                ":hover": {
-                  backgroundColor: "primary.main",
-                  color: "background.default",
-                },
-                py: 1.5,
-                px: 5,
-                borderRadius: "5px",
-                fontSize: "1.2rem",
-                textTransform: "none",
-                color: "primary.main",
 
-                border: "solid",
-                borderColor: "primary.main",
-                borderWidth: "1px",
-              }}
-            >
-              {t("read_more")}
-            </Button>
-              </div>
+        <div className="justify-center items-center flex">
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "transparent",
+              ":hover": {
+                backgroundColor: "primary.main",
+                color: "background.default",
+              },
+              py: 1.5,
+              px: 5,
+              borderRadius: "5px",
+              fontSize: "1.2rem",
+              textTransform: "none",
+              color: "primary.main",
+
+              border: "solid",
+              borderColor: "primary.main",
+              borderWidth: "1px",
+            }}
+          >
+            {t("read_more")}
+          </Button>
+        </div>
       </div>
     </div>
   );
