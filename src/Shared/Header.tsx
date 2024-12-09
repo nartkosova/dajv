@@ -50,19 +50,19 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="font-bold text-3xl text-[#A01717]">
-            <a href="#">LOGO</a>
+          <NavLink to="/">Logo</NavLink>
           </div>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:justify-center md:space-x-2 md:w-auto md:bg-transparent ml-18">
           <div>
-            <a
-              href="#"
+            <NavLink
+              to="/about"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("about")}
-            </a>
+            </NavLink>
           </div>
           <div>
             <a
