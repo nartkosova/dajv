@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Button } from "@mui/material";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
@@ -12,7 +12,9 @@ const Header = () => {
   const open = Boolean(anchorEl);
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { lang } = useParams();
+  const language = location.pathname.split("/")[1];
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -25,12 +27,21 @@ const Header = () => {
   const handleLanguageChange = (newLang: string) => {
     if (newLang !== lang) {
       i18n.changeLanguage(newLang.toLowerCase());
-      if (newLang.toLowerCase() === "de") {
-        navigate("/");
-      } else {
-        navigate(`/${newLang.toLowerCase()}`);
+
+      const pathParts = location.pathname.split("/").filter(Boolean);
+
+      if (pathParts[0] && pathParts[0].length === 2) {
+        pathParts.shift();
+      }
+
+      const newPath =
+        `/${newLang.toLowerCase()}/${pathParts.join("/")}`.replace(/\/$/, "");
+
+      if (location.pathname !== newPath) {
+        navigate(newPath);
       }
     }
+
     handleClose();
   };
 
@@ -50,6 +61,8 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="font-bold text-3xl text-[#A01717]">
+
+            <NavLink to={`/${language}`}>LOGO</NavLink>
           <NavLink to="/">Logo</NavLink>
           </div>
         </div>
@@ -58,6 +71,7 @@ const Header = () => {
         <nav className="hidden md:flex md:justify-center md:space-x-2 md:w-auto md:bg-transparent ml-18">
           <div>
             <NavLink
+              to={`/${language}/about`}
               to="/about"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
@@ -65,16 +79,16 @@ const Header = () => {
             </NavLink>
           </div>
           <div>
-            <a
-              href="#"
+            <NavLink
+              to={`/${language}/latest`}
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("latest")}
-            </a>
+            </NavLink>
           </div>
           <div>
             <NavLink
-             to= "/contact"
+              to={`/${language}/contact`}
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("contact")}
@@ -176,28 +190,28 @@ const Header = () => {
           } absolute top-16 left-0 w-full z-50 bg-white md:hidden pt-4`}
         >
           <div>
-            <a
-              href="#"
+            <NavLink
+              to={`/${language}/about`}
               className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
-              About Us
-            </a>
+              {t("about")}
+            </NavLink>
           </div>
           <div>
-            <a
-              href="#"
+            <NavLink
+              to={`/${language}/latest`}
               className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
-              Latest
-            </a>
+              {t("latest")}
+            </NavLink>
           </div>
           <div>
-            <a
-              href="/contact"
+            <NavLink
+              to={`/${language}/contact`}
               className="block text-lg py-4 px-4 hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
-              Contact
-            </a>
+              {t("contact")}
+            </NavLink>
           </div>
 
           {/* Social Media Icons for Mobile */}

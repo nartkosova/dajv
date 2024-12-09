@@ -19,10 +19,10 @@ const Contact: React.FC = () => {
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-  
+
     // Handle checkbox specifically
     if (e.target instanceof HTMLInputElement && e.target.type === "checkbox") {
       setFormData({
@@ -36,7 +36,6 @@ const Contact: React.FC = () => {
       });
     }
   };
-  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,7 +72,7 @@ const Contact: React.FC = () => {
       }
     } catch (error) {
       setSubmitMessage(
-        "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut."
+        "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
       );
     } finally {
       setIsSubmitting(false);
@@ -81,16 +80,17 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-16 bg-white px-8 lg:px-20 shadow-lg rounded-md space-y-6 md:space-y-0 md:space-x-12">
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center min-h-screen py-28 bg-white px-8 lg:px-20 shadow-lg rounded-md space-y-6 md:space-y-0 md:space-x-12">
       <div className="space-y-4 md:w-1/2">
-      <p className="font-medium text-customRed mb-1 uppercase">
-            contact
-          </p>
-          <h2 className="text-3xl font-semibold mb-12 sm:mb-20 text-left">
-            LOREM IPSUM IS SIMPLY
-          </h2>
+        <p className="font-medium text-customRed mb-1 uppercase">contact</p>
+        <h2 className="text-3xl font-semibold mb-12 sm:mb-20 text-left">
+          LOREM IPSUM IS SIMPLY
+        </h2>
         <p className="text-text text-lg">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
         </p>
         <div className="space-y-4 mt-6 ">
           <div className="flex items-center text-gray-600 pb-5 pt-5">
@@ -107,7 +107,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
-
 
       <form
         className="bg-gray-100 rounded-lg p-6 w-full md:w-1/2 shadow-xl"
@@ -224,7 +223,7 @@ const Contact: React.FC = () => {
             className="mt-1 block w-full p-2 border border-dividers rounded-md text-sm focus:ring-red-500 focus:border-red-500"
           ></textarea>
         </div>
-        
+
         {/* Checkbox with updated layout */}
         <div className="flex items-center mt-4 space-x-2">
           <input
@@ -236,31 +235,34 @@ const Contact: React.FC = () => {
             required
           />
           <div className="text-sm text-gray-600">
-            <span>Einverständniserklärung und Datenschutz*</span><br />
+            <span>Einverständniserklärung und Datenschutz*</span>
+            <br />
             <span className="text-sm">Anzeigen und akzeptieren</span>
           </div>
         </div>
 
         <div className="flex justify-center">
-        <button
-          type="submit"
-          className={`mt-6 w-[174px] h-[58px] bg-customRed justify-center text-white py-2 px-4 rounded-[4px] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
-            isSubmitting ? "opacity-50" : ""
-          }`}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Senden..." : "Absenden"}
-        </button>
-
-        {submitMessage && (
-          <p
-          className={`p-4 text-sm ${
-            submitMessage.includes("Fehler") ? "text-customRed" : "text-text"
-          }`}
+          <button
+            type="submit"
+            className={`mt-6 w-[174px] h-[58px] bg-customRed justify-center text-white py-2 px-4 rounded-[4px] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+              isSubmitting ? "opacity-50" : ""
+            }`}
+            disabled={isSubmitting}
           >
-            {submitMessage}
-          </p>
-        )}
+            {isSubmitting ? "Senden..." : "Absenden"}
+          </button>
+
+          {submitMessage && (
+            <p
+              className={`p-4 text-sm ${
+                submitMessage.includes("Fehler")
+                  ? "text-customRed"
+                  : "text-text"
+              }`}
+            >
+              {submitMessage}
+            </p>
+          )}
         </div>
       </form>
     </div>
