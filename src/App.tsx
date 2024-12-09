@@ -13,6 +13,8 @@ import "./i18n";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import Contact from "./components/ContactForm/Contact";
 import i18n from "./i18n";
+import About from "./components/AboutComponents/About";
+
 
 const LanguageWrapper = ({ children }: { children: React.ReactNode }) => {
   const { lang } = useParams();
@@ -55,6 +57,10 @@ function App() {
               }
             />
             <Route path="/" element={<Navigate to="/en" replace />} />
+            <Route path="/" element={<Home />} />
+            <Route path ="/contact" element={<Contact/>} />
+            <Route path ="/about" element={<About/>}/>
+            <Route path="/:lang" element={<Home />} />
           </Routes>
           <Footer />
         </BrowserRouter>
