@@ -63,7 +63,6 @@ const Header = () => {
           <div className="font-bold text-3xl text-[#A01717]">
 
             <NavLink to={`/${language}`}>LOGO</NavLink>
-          <NavLink to="/">Logo</NavLink>
           </div>
         </div>
 
@@ -72,7 +71,6 @@ const Header = () => {
           <div>
             <NavLink
               to={`/${language}/about`}
-              to="/about"
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("about")}

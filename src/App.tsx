@@ -15,7 +15,6 @@ import Contact from "./components/ContactForm/Contact";
 import i18n from "./i18n";
 import About from "./components/AboutComponents/About";
 
-
 const LanguageWrapper = ({ children }: { children: React.ReactNode }) => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
@@ -56,7 +55,15 @@ function App() {
                 </LanguageWrapper>
               }
             />
-            <Route path="/" element={<Navigate to="/en" replace />} />
+            <Route
+              path="/:lang/about"
+              element={
+                <LanguageWrapper>
+                  <About />
+                </LanguageWrapper>
+              }
+            />
+            <Route path="/" element={<Navigate to="/de" replace />} />
             <Route path="/" element={<Home />} />
             <Route path ="/contact" element={<Contact/>} />
             <Route path ="/about" element={<About/>}/>

@@ -7,9 +7,10 @@ interface OurStoryProps {
   title: string;
   content: string;
   image: string;
+  showReadMore?: boolean
 }
 
-const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image }) => {
+const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image, showReadMore = true,}) => {
   const { t } = useTranslation("ourStory");
   return (
     <div className="!flex relative bg-white px-8 lg:px-20 py-28 items-center justify-center">
@@ -20,6 +21,7 @@ const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image }) => {
             {title}
           </h2>
           <p className="text-lg mb-8">{content}</p>
+          {showReadMore && (
           <div>
             <Button
               variant="contained"
@@ -44,6 +46,7 @@ const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image }) => {
               {t("read_more")}
             </Button>
           </div>
+            )}
         </div>
 
         <div className="relative flex items-center justify-end content-start lg:w-1/2 self-center">

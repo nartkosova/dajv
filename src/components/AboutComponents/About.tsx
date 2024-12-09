@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import OurStory from '../HomeComponents/OurStory';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t: tOurStory } = useTranslation("ourStory");
   return (
     <Box>
       
@@ -34,35 +37,32 @@ const About = () => {
             color: 'white',
           }}
         >
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: '2.5rem', md: '3rem', lg: '3.5rem' },
-              fontWeight: '600',
-              marginBottom: 2,
-              maxWidth: '750px',
-              color: '#FFFFFF',
-              textTransform: 'uppercase',
-            }}
-          >
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: { xs: "2.5rem", md: "3rem", lg: "3.5rem" },
+            fontWeight: "600",
+            marginBottom: 2,
+            maxWidth: "750px",
+            color: "#FFFFFF",
+            textTransform: "uppercase",
+          }}
+        >
             ÜBER UNS
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: { xs: '1rem', md: '1.25rem' },
-              maxWidth: '750px',
-              mx: 'auto',
-              marginTop: 2,
-              lineHeight: 1.8,
-              color: '#FFFFFF',
-            }}
-          >
-            Der Albanisch-Deutsche Juristenverein e.V. mit Sitz in Frankfurt am Main wurde gegründet, um die juristische Zusammenarbeit zwischen [...] zu fördern und die Interessen der albanischen und deutschen Juristen in beiden Ländern zu vertreten.
-          </Typography>
+        </Typography>
+          <p className="text-lg max-w-2xl mb-8 px-4">Der Albanisch-Deutsche Juristenverein e.V. mit Sitz in Frankfurt am Main wurde gegründet, um die juristische Zusammenarbeit zwischen [...] zu fördern und die Interessen der albanischen und deutschen Juristen in beiden Ländern zu vertreten.</p>
         </Box>
       </Box>
 
-      <Box sx={{ padding: '4rem 1rem' }}>
+      <OurStory
+        our={tOurStory("our")}
+        title={tOurStory("title")}
+        content={tOurStory("story")}
+        showReadMore={false}
+        image="https://s3-alpha-sig.figma.com/img/2e0e/fafd/58d36059688776d4ba895dbd2789ce57?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bbYxFxmjWdQa6nfWl6B-svty16pv6I40ldGG-PYcr-fiKpWQZprxrJJc9VI2y9vEWe8FlkP8zdy7UkbUj9bLO9~kNJQbp1M1NBzy4fnQcHD1~Vrf7HWsa0jowmRejBQNsz77nhEwkgdxH8rTBugxA20xb-VB2w0M1qnjoSn3ISIJsRh1dEjm0cPZGLFCZtouBrE2CVyVK-ISRTrerE74Jax7KrBStLxAoj~GqUxKmnlGcfAS9t0cXk7Kf4YWdC~hj7XjCFj2sfYhN-TdOJ3V-gSMEZ1Y10UvwFM7EJk-qLyouo0idlNRMgq-FdTMZpPyCJ4KvSro-RcYoe5VZ~wJ4A__"
+      />
+
+      <Box sx={{ padding: '4rem 2rem' }}>
         <Typography
           variant="h2"
           sx={{
@@ -78,9 +78,10 @@ const About = () => {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '2rem',
+            gap: '3rem',
             maxWidth: '1200px',
             margin: '0 auto',
+
           }}
         >
           {[...Array(6)].map((_, idx) => (
@@ -89,6 +90,7 @@ const About = () => {
               sx={{
                 height: '328px',
                 width: { xs: '100%', sm: '30%' },
+
                 backgroundImage:
                   'url(https://s3-alpha-sig.figma.com/img/ad8b/a92c/9e252417e19320a3688d65c4c95a8751?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mfeINBu3dY-TvwbTigHC6ZIaK2X0pbBCfjhsnht2n6CzTTVzCBeEKrSWLN03a3kZra0dUUpEMBf302bsw5ufi2RHCe7rqAAh~x8NloLiLRtDwx7cvJLCPAPl4NXeddJWvc7tvGtDSvRt2lPfd3RGpyGbjyf--tfa57vIr51cva4G5M1RNHaiZXPqbuZMkCS6VbqTC1ov9saZv5ygv9u~LQyVu-vxdwvGy2hw0ZqTdglxGRIIoXrUsLOiv9B4u4PbogxW5G20IdVJFyA8mK5jrexwX2p3ENS6fFHSVteYB9CJCmLw22pfKyEyMmWJgbsqczNvp0-nenV507qPXsUstg__)',
                 backgroundSize: 'cover',
@@ -99,6 +101,14 @@ const About = () => {
         </Box>
       </Box>
 
+      
+      <OurStory
+        our={tOurStory("our")}
+        title={tOurStory("title")}
+        content={tOurStory("story")}
+        showReadMore={false}
+        image="https://s3-alpha-sig.figma.com/img/2e0e/fafd/58d36059688776d4ba895dbd2789ce57?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bbYxFxmjWdQa6nfWl6B-svty16pv6I40ldGG-PYcr-fiKpWQZprxrJJc9VI2y9vEWe8FlkP8zdy7UkbUj9bLO9~kNJQbp1M1NBzy4fnQcHD1~Vrf7HWsa0jowmRejBQNsz77nhEwkgdxH8rTBugxA20xb-VB2w0M1qnjoSn3ISIJsRh1dEjm0cPZGLFCZtouBrE2CVyVK-ISRTrerE74Jax7KrBStLxAoj~GqUxKmnlGcfAS9t0cXk7Kf4YWdC~hj7XjCFj2sfYhN-TdOJ3V-gSMEZ1Y10UvwFM7EJk-qLyouo0idlNRMgq-FdTMZpPyCJ4KvSro-RcYoe5VZ~wJ4A__"
+      />
       
       <Box
         sx={{
@@ -131,12 +141,13 @@ const About = () => {
         >
           <Typography
             sx={{
-              fontSize: { xs: '2rem', md: '1.25rem' },
+              fontSize: { xs: '1.25rem', md: '2rem' },
               fontWeight: 500,
-              maxWidth: '750px',
+              maxWidth: {md:'750px'},
+              px: {xs:'2rem'},
               mx: 'auto',
               marginTop: 2,
-              lineHeight: { xs: '2.5rem', md: '1.8rem' },
+              lineHeight: { md: '2.5rem', xs: '1.8rem' },
               color: '#FFFFFF',
               textTransform: 'uppercase',
             }}
