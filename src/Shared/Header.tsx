@@ -61,7 +61,6 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="font-bold text-3xl text-[#A01717]">
-
             <NavLink to={`/${language}`}>LOGO</NavLink>
           </div>
         </div>

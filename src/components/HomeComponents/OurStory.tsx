@@ -7,10 +7,16 @@ interface OurStoryProps {
   title: string;
   content: string;
   image: string;
-  showReadMore?: boolean
+  showReadMore?: boolean;
 }
 
-const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image, showReadMore = true,}) => {
+const OurStory: React.FC<OurStoryProps> = ({
+  our,
+  title,
+  content,
+  image,
+  showReadMore = true,
+}) => {
   const { t } = useTranslation("ourStory");
   return (
     <div className="!flex relative bg-white px-8 lg:px-20 py-28 items-center justify-center">
@@ -22,31 +28,31 @@ const OurStory: React.FC<OurStoryProps> = ({ our, title, content, image, showRea
           </h2>
           <p className="text-lg mb-8">{content}</p>
           {showReadMore && (
-          <div>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "transparent",
-                ":hover": {
-                  backgroundColor: "primary.main",
-                  color: "background.default",
-                },
-                py: 1.5,
-                px: 5,
-                borderRadius: "5px",
-                fontSize: "1.2rem",
-                textTransform: "none",
-                color: "primary.main",
+            <div>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "transparent",
+                  ":hover": {
+                    backgroundColor: "primary.main",
+                    color: "background.default",
+                  },
+                  py: 1.5,
+                  px: 5,
+                  borderRadius: "5px",
+                  fontSize: "1.2rem",
+                  textTransform: "none",
+                  color: "primary.main",
 
-                border: "solid",
-                borderColor: "primary.main",
-                borderWidth: "1px",
-              }}
-            >
-              {t("read_more")}
-            </Button>
-          </div>
-            )}
+                  border: "solid",
+                  borderColor: "primary.main",
+                  borderWidth: "1px",
+                }}
+              >
+                {t("read_more")}
+              </Button>
+            </div>
+          )}
         </div>
 
         <div className="relative flex items-center justify-end content-start lg:w-1/2 self-center">

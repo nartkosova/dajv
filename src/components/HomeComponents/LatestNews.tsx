@@ -62,11 +62,11 @@ const LatestNews: React.FC = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 justify-items-center mb-8">
           {news.map((news) => (
             <div
               key={news.id}
-              className="border border-dividers rounded-md hover:shadow-xl transition-all duration-300 pb-6 mb-8"
+              className="border border-dividers rounded-md hover:shadow-xl transition-all duration-300 pb-6"
               style={{ maxWidth: "390px" }}
             >
               <div className="bg-gray-200 rounded-t-lg">

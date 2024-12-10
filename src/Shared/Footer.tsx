@@ -91,7 +91,7 @@ const Footer = () => {
 
         <div className="flex justify-between items-center text-sm">
           <p>©2024 DAJV {t("privacy")} | Veranstaltungs-AGB</p>
-          <p>Delivered by Telos Labs</p>
+          <p>{t("delivered")} Telos Labs</p>
         </div>
       </div>
     </footer>

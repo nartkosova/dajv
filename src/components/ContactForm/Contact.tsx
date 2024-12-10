@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // Importing React Icons
 
 const Contact: React.FC = () => {
@@ -14,6 +15,7 @@ const Contact: React.FC = () => {
     nachricht: "",
     agreement: false,
   });
+  const { t } = useTranslation("contact");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
@@ -82,16 +84,13 @@ const Contact: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-center min-h-screen py-28 bg-white px-8 lg:px-20 shadow-lg rounded-md space-y-6 md:space-y-0 md:space-x-12">
       <div className="space-y-4 md:w-1/2">
-        <p className="font-medium text-customRed mb-1 uppercase">contact</p>
-        <h2 className="text-3xl font-semibold mb-12 sm:mb-20 text-left">
-          LOREM IPSUM IS SIMPLY
-        </h2>
-        <p className="text-text text-lg">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+        <p className="font-medium text-customRed mb-1 uppercase">
+          {t("contact")}
         </p>
+        <h2 className="text-3xl font-semibold mb-12 sm:mb-20 text-left uppercase">
+          {t("title")}
+        </h2>
+        <p className="text-text text-lg">{t("text")}</p>
         <div className="space-y-4 mt-6 ">
           <div className="flex items-center text-gray-600 pb-5 pt-5">
             <FaPhone className="mr-4 w-9 h-9 text-customRed" />
@@ -115,7 +114,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="anrede" className="text-text text-sm">
-              Anrede*
+              {t("salutation")}<span className="text-customRed">*</span>
             </label>
             <input
               id="anrede"
@@ -129,7 +128,7 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="titel" className="text-text text-sm">
-              Titel
+              {t("title1")}
             </label>
             <input
               id="titel"
@@ -142,7 +141,7 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="vorname" className="text-text text-sm">
-              Vorname*
+              {t("name")}<span className="text-customRed">*</span>
             </label>
             <input
               id="vorname"
@@ -156,7 +155,7 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="nachname" className="text-text text-sm">
-              Nachname*
+              {t("surname")}<span className="text-customRed">*</span>
             </label>
             <input
               id="nachname"
@@ -170,7 +169,7 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="email" className="text-text text-sm">
-              E-Mail-Adresse*
+              {t("email")}<span className="text-customRed">*</span>
             </label>
             <input
               id="email"
@@ -184,7 +183,7 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="telefon" className="text-text text-sm">
-              Telefon
+              {t("phone")}
             </label>
             <input
               id="telefon"
@@ -198,7 +197,7 @@ const Contact: React.FC = () => {
         </div>
         <div className="mt-4">
           <label htmlFor="betreff" className="text-text text-sm">
-            Betreff*
+            {t("reference")}<span className="text-customRed">*</span>
           </label>
           <input
             id="betreff"
@@ -212,7 +211,7 @@ const Contact: React.FC = () => {
         </div>
         <div className="mt-4">
           <label htmlFor="nachricht" className="text-text text-sm">
-            Ihre Nachricht
+            {t("message")}
           </label>
           <textarea
             id="nachricht"
@@ -225,19 +224,18 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Checkbox with updated layout */}
-        <div className="flex items-center mt-4 space-x-2">
-          <input
-            name="agreement"
-            type="checkbox"
-            checked={formData.agreement}
-            onChange={handleChange}
-            className="form-checkbox text-red-600"
-            required
-          />
-          <div className="text-sm text-gray-600">
-            <span>Einverständniserklärung und Datenschutz*</span>
-            <br />
-            <span className="text-sm">Anzeigen und akzeptieren</span>
+        <div className="flex flex-col items-start mt-4 space-x-2">
+          <p className="font-medium">{t("data")}<span className="text-customRed">*</span></p>
+          <div className="flex flex-row space-x-2 pt-2">
+            <input
+              name="agreement"
+              type="checkbox"
+              checked={formData.agreement}
+              onChange={handleChange}
+              className="form-checkbox text-customRed"
+              required
+            />
+            <span className="text-sm font-normal">{t("accept")}</span>
           </div>
         </div>
 
