@@ -13,9 +13,9 @@ const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { lang } = useParams();
   const language = location.pathname.split("/")[1];
-
+  const { lang } = useParams();
+  
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
