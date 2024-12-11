@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 export default () => {
   const swiperRef = useRef<any>(null);
-  const { t } = useTranslation("slider");
+  const { t } = useTranslation("home");
 
   const handleNextSlide = () => {
     if (swiperRef.current) {
@@ -30,8 +30,8 @@ export default () => {
         <p className="font-medium text-customRed mb-1 uppercase bg-dividers2">
           {t("board")}
         </p>
-        <h2 className="text-3xl font-medium mb-20 text-center">
-          LOREM IPSUM IS SIMPLY
+        <h2 className="text-3xl font-medium mb-20 text-center uppercase">
+          {t("title_slider")}
         </h2>
       </div>
       <div>

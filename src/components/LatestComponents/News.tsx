@@ -11,7 +11,7 @@ interface news {
 }
 
 const News: React.FC = () => {
-  const { t } = useTranslation("latest-news-aktuelles");
+  const { t } = useTranslation("latest-news");
 
   const news: news[] = [
     {

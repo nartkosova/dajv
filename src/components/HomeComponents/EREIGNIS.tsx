@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
 const EREIGNIS = () => {
-  const {t} = useTranslation("hero")
+  const { t } = useTranslation("home");
   const location = useLocation();
   const language = location.pathname.split("/")[1];
   const data = [
@@ -113,29 +113,29 @@ const EREIGNIS = () => {
         ))}
       </div>
       <NavLink to={`/${language}/events`}>
-      <Button
-        variant="contained"
-        sx={{
-          backgroundColor: "transparent",
-          ":hover": {
-            backgroundColor: "primary.main",
-            color: "background.default",
-          },
-          py: 1.5,
-          px: 5,
-          borderRadius: "5px",
-          fontSize: "1.2rem",
-          textTransform: "none",
-          color: "primary.main",
-          
-          border: "solid",
-          borderColor: "primary.main",
-          borderWidth: "1px",
-        }}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "transparent",
+            ":hover": {
+              backgroundColor: "primary.main",
+              color: "background.default",
+            },
+            py: 1.5,
+            px: 5,
+            borderRadius: "5px",
+            fontSize: "1.2rem",
+            textTransform: "none",
+            color: "primary.main",
+
+            border: "solid",
+            borderColor: "primary.main",
+            borderWidth: "1px",
+          }}
         >
-        {t("read_more")}
-      </Button>
-        </NavLink>
+          {t("read_more")}
+        </Button>
+      </NavLink>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 
 interface News {
   id: number;
@@ -13,7 +13,7 @@ interface News {
 }
 
 const LatestNews: React.FC = () => {
-  const { t } = useTranslation("latestNews");
+  const { t } = useTranslation("home");
   const location = useLocation();
   const language = location.pathname.split("/")[1];
 
@@ -60,8 +60,8 @@ const LatestNews: React.FC = () => {
           <p className="font-medium text-customRed mb-1 uppercase">
             {t("latest")}
           </p>
-          <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center">
-            LOREM IPSUM IS SIMPLY
+          <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center uppercase">
+            {t("title_latest")}
           </h2>
         </div>
 
@@ -87,12 +87,12 @@ const LatestNews: React.FC = () => {
                 <p className="text-lg max-w-2xl line-clamp-3">
                   {news.description}
                 </p>
-                <NavLink
+                <Link
                   to={`/${language}/latest`}
                   className="text-customRed font-medium mt-4 inline-block"
                 >
-                  Read More
-                </NavLink>
+                  {t("learn_more")}
+                </Link>
                 <div className="flex items-center justify-between mt-4 text-gray-500 text-sm">
                   <div className="flex items-center">
                     <img
@@ -110,31 +110,30 @@ const LatestNews: React.FC = () => {
         </div>
 
         <div className="justify-center items-center flex">
-          <NavLink 
-          to={`/${language}/latest`}>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "transparent",
-              ":hover": {
-                backgroundColor: "primary.main",
-                color: "background.default",
-              },
-              py: 1.5,
-              px: 5,
-              borderRadius: "5px",
-              fontSize: "1.2rem",
-              textTransform: "none",
-              color: "primary.main",
+          <NavLink to={`/${language}/latest`}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "transparent",
+                ":hover": {
+                  backgroundColor: "primary.main",
+                  color: "background.default",
+                },
+                py: 1.5,
+                px: 5,
+                borderRadius: "5px",
+                fontSize: "1.2rem",
+                textTransform: "none",
+                color: "primary.main",
 
-              border: "solid",
-              borderColor: "primary.main",
-              borderWidth: "1px",
-            }}
-          >
-            {t("read_more")}
-          </Button>
-            </NavLink>
+                border: "solid",
+                borderColor: "primary.main",
+                borderWidth: "1px",
+              }}
+            >
+              {t("read_more")}
+            </Button>
+          </NavLink>
         </div>
       </div>
     </div>
