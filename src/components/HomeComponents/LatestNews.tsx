@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { NavLink, useLocation } from "react-router-dom";
 
 interface News {
   id: number;
@@ -13,6 +14,8 @@ interface News {
 
 const LatestNews: React.FC = () => {
   const { t } = useTranslation("latestNews");
+  const location = useLocation();
+  const language = location.pathname.split("/")[1];
 
   const news: News[] = [
     {
@@ -62,11 +65,11 @@ const LatestNews: React.FC = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 justify-items-center mb-8">
           {news.map((news) => (
             <div
               key={news.id}
-              className="border border-dividers rounded-md hover:shadow-xl transition-all duration-300 pb-6 mb-8"
+              className="border border-dividers rounded-md hover:shadow-xl transition-all duration-300 pb-6"
               style={{ maxWidth: "390px" }}
             >
               <div className="bg-gray-200 rounded-t-lg">
@@ -84,12 +87,12 @@ const LatestNews: React.FC = () => {
                 <p className="text-lg max-w-2xl line-clamp-3">
                   {news.description}
                 </p>
-                <a
-                  href="#"
+                <NavLink
+                  to={`/${language}/latest`}
                   className="text-customRed font-medium mt-4 inline-block"
                 >
                   Read More
-                </a>
+                </NavLink>
                 <div className="flex items-center justify-between mt-4 text-gray-500 text-sm">
                   <div className="flex items-center">
                     <img
@@ -107,6 +110,8 @@ const LatestNews: React.FC = () => {
         </div>
 
         <div className="justify-center items-center flex">
+          <NavLink 
+          to={`/${language}/latest`}>
           <Button
             variant="contained"
             sx={{
@@ -129,6 +134,7 @@ const LatestNews: React.FC = () => {
           >
             {t("read_more")}
           </Button>
+            </NavLink>
         </div>
       </div>
     </div>

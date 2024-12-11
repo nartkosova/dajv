@@ -13,9 +13,9 @@ const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { lang } = useParams();
   const language = location.pathname.split("/")[1];
-
+  const { lang } = useParams();
+  
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -61,7 +61,6 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="font-bold text-3xl text-[#A01717]">
-
             <NavLink to={`/${language}`}>LOGO</NavLink>
           </div>
         </div>
