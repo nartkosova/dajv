@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const WhatWeDo: React.FC = () => {
-  const { t } = useTranslation("whatWeDo");
+  const { t } = useTranslation("home");
   const features = [
     {
       icon: "fas fa-lightbulb",
@@ -34,7 +34,7 @@ const WhatWeDo: React.FC = () => {
             {t("what_we_do")}
           </p>
           <h2 className="text-3xl font-medium mb-12 sm:mb-20 text-center uppercase">
-            {t("title")}
+            {t("what_we_do_title")}
           </h2>
         </div>
 

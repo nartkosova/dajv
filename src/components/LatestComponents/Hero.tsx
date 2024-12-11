@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
-  const { t } = useTranslation("latest-hero");
+  const { t } = useTranslation("latest-news");
   return (
     <Box
       sx={{

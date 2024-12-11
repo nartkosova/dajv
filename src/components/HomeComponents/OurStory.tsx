@@ -17,7 +17,7 @@ const OurStory: React.FC<OurStoryProps> = ({
   image,
   showReadMore = true,
 }) => {
-  const { t } = useTranslation("ourStory");
+  const { t } = useTranslation("home");
   return (
     <div className="!flex relative bg-white px-8 lg:px-20 py-28 items-center justify-center">
       <div className="flex flex-col lg:flex-row items-center lg:items-start ">

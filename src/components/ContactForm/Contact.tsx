@@ -114,7 +114,8 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="anrede" className="text-text text-sm">
-              {t("salutation")}<span className="text-customRed">*</span>
+              {t("salutation")}
+              <span className="text-customRed">*</span>
             </label>
             <input
               id="anrede"
@@ -141,7 +142,8 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="vorname" className="text-text text-sm">
-              {t("name")}<span className="text-customRed">*</span>
+              {t("name")}
+              <span className="text-customRed">*</span>
             </label>
             <input
               id="vorname"
@@ -155,7 +157,8 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="nachname" className="text-text text-sm">
-              {t("surname")}<span className="text-customRed">*</span>
+              {t("surname")}
+              <span className="text-customRed">*</span>
             </label>
             <input
               id="nachname"
@@ -169,7 +172,8 @@ const Contact: React.FC = () => {
           </div>
           <div>
             <label htmlFor="email" className="text-text text-sm">
-              {t("email")}<span className="text-customRed">*</span>
+              {t("email")}
+              <span className="text-customRed">*</span>
             </label>
             <input
               id="email"
@@ -197,7 +201,8 @@ const Contact: React.FC = () => {
         </div>
         <div className="mt-4">
           <label htmlFor="betreff" className="text-text text-sm">
-            {t("reference")}<span className="text-customRed">*</span>
+            {t("reference")}
+            <span className="text-customRed">*</span>
           </label>
           <input
             id="betreff"
@@ -225,7 +230,10 @@ const Contact: React.FC = () => {
 
         {/* Checkbox with updated layout */}
         <div className="flex flex-col items-start mt-4 space-x-2">
-          <p className="font-medium">{t("data")}<span className="text-customRed">*</span></p>
+          <p className="font-medium">
+            {t("data")}
+            <span className="text-customRed">*</span>
+          </p>
           <div className="flex flex-row space-x-2 pt-2">
             <input
               name="agreement"
