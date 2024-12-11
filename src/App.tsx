@@ -15,6 +15,7 @@ import Contact from "./components/ContactForm/Contact";
 import i18n from "./i18n";
 import About from "./components/AboutComponents/About";
 import Latest from "./components/LatestComponents/Latest";
+import Event from "./components/EventComponents/Event";
 
 const LanguageWrapper = ({ children }: { children: React.ReactNode }) => {
   const { lang } = useParams();
@@ -72,11 +73,20 @@ function App() {
                 </LanguageWrapper>
               }
             />
+            <Route
+              path="/:lang/events"
+              element={
+                <LanguageWrapper>
+                  <Event />
+                </LanguageWrapper>
+              }
+            />
             <Route path="/" element={<Navigate to="/de" replace />} />
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/latest" element={<Latest />} />
+            <Route path="/events" element={<Event />} />
             <Route path="/:lang" element={<Home />} />
           </Routes>
           <Footer />

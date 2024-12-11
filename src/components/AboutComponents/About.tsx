@@ -66,7 +66,7 @@ const About = () => {
       />
 
 <div className="flex justify-center items-center px-8 lg:px-20">
-  <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
     {[...Array(6)].map((_, idx) => (
       <Box
         key={idx}
@@ -126,10 +126,11 @@ const About = () => {
         >
           <Typography
             sx={{
-              fontSize: { xs: "1.25rem", md: "2rem" },
+              fontSize: { xs: "1.5rem", md: "2rem" },
               fontWeight: 500,
-              maxWidth: { sm: "750px", md:"1000px", lg: "1400px" },
-              px: { xs: "2rem", lg:"1rem" },
+              // maxWidth: { sm: "750px", md:"1000px", lg: "1300px" },
+              width: "100%",
+              px: { xs: "2rem", lg:"5rem" },
               my: 2,
               lineHeight: { md: "2.5rem", xs: "1.8rem" },
               color: "#FFFFFF",

@@ -1,8 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa"; // For location icon
+import { useTranslation } from "react-i18next";
+import { NavLink, useLocation } from "react-router-dom";
 
 const EREIGNIS = () => {
+  const {t} = useTranslation("hero")
+  const location = useLocation();
+  const language = location.pathname.split("/")[1];
   const data = [
     {
       image:
@@ -71,14 +76,14 @@ const EREIGNIS = () => {
         </h2>
       </div>
       <div
-        className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 sm:grid-rows-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-8"
+        className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8"
         style={{}}
       >
         {data.map((item, index) => (
           <div
             key={index}
             className="border rounded-md border-dividers overflow-hidden hover:shadow-xl transition-all duration-300"
-            style={{ width: "300px", maxHeight: "344px" }}
+            style={{ width: "290px", maxHeight: "340px" }}
           >
             <img
               src={item.image}
@@ -107,6 +112,7 @@ const EREIGNIS = () => {
           </div>
         ))}
       </div>
+      <NavLink to={`/${language}/events`}>
       <Button
         variant="contained"
         sx={{
@@ -121,15 +127,15 @@ const EREIGNIS = () => {
           fontSize: "1.2rem",
           textTransform: "none",
           color: "primary.main",
-
+          
           border: "solid",
           borderColor: "primary.main",
           borderWidth: "1px",
         }}
-      >
-        {/* {t("read_more")} */}
-        Read More
+        >
+        {t("read_more")}
       </Button>
+        </NavLink>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { initialEvents } from "./data"; 
+import { useLocation } from "react-router-dom";
 
 const Event = () => {
 
@@ -10,7 +11,6 @@ const Event = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
   const [showAllMobileEvents, setShowAllMobileEvents] = useState(false);
-
 
   const eventsPerPage = 20;
 
@@ -74,7 +74,6 @@ const Event = () => {
 
   return (
     <div>
-    
       <div
         className="relative bg-cover bg-center h-[500px]"
         style={{ backgroundImage: "url('https://s3-alpha-sig.figma.com/img/6c81/60ca/56f3eab7abd619c6f43ad594be3b865a?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JOng4YkyZqzJCvVMd~NiN9EHlqosMoVm8lkj36GsMEmdhnHI1DwawIWE3PZo0rSd35KmHf0RuNuUCVWlw8Dx2I~IHeAQdqWv6ZM7hVuCzoytxbQLXwRnms6bPHWMFCs3mKmBW1ZMC9XmzzObr-q4us5MK2Y8AH1HLwVI1OriQB9blZHeyQajvZV8vwV~jwiPprV~u6iWX1DIlN8mx9JKgmYXf02ai8SByaWAIMMF6Y56ZhCTIrBM6Kjdv6eylA4yy34v~MFaSC1y~4ODygpTs5BfCWftalg5P60NSbifHeuPnr3Z3r0GjBMCq~~OM4pNKdMZy80cyWFaCBdr3yx6bg__')" }}
@@ -91,20 +90,19 @@ const Event = () => {
           </div>
         </div>
       </div>
+      <div  className="px-8 lg:px-20 py-20">
 
-      
-      <div className="flex flex-wrap justify-between items-center px-6 py-4 space-y-2 md:space-y-0 w-full max-w-screen-xl">
-      
+      <div className="flex flex-wrap justify-between items-center space-y-2 md:space-y-0 w-full pb-6">
         <div>
-          <label htmlFor="filter" className="mr-2 font-medium">
+          <label htmlFor="filter" className="font-medium">
             Show:
           </label>
           <select
             id="filter"
-            className="px-3 py-2 border rounded shadow-sm"
             value={filter}
+            className="font-medium"
             onChange={handleFilterChange}
-          >
+            >
             <option value="All">All</option>
             <option value="Latest">Latest</option>
             <option value="Earliest">Earliest</option>
@@ -112,25 +110,26 @@ const Event = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center">
+        <div className="flex items-end">
           <input
             type="text"
-            placeholder="Search by title or city..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={handleSearch}
-            className="px-4 py-2 border rounded shadow-sm w-64"
-          />
+            className="px-4 py-2 border border-dividers rounded-md shadow-sm maxw-[290px]"
+            />
         </div>
       </div>
 
       {/* Event List */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8 w-full max-w-screen-xl justify-center mx-auto">
+      <div className="flex justify-center items-center">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8">
         {eventsToShow.map((event) => (
           <div
             key={event.id}
-            className="border rounded-md border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 mx-auto"
-            style={{ width: "300px", maxHeight: "344px" }}
-          >
+            className="border rounded-md border-dividers overflow-hidden hover:shadow-xl transition-all duration-300"
+            style={{ maxWidth: "290px", maxHeight: "340px" }}
+            >
             <img
               src={event.image}
               className="w-full h-48 object-cover"
@@ -145,7 +144,7 @@ const Event = () => {
                 </div>
               </div>
               <p
-                className="my-4 text-lg text-blue-600"
+                className="my-4 text-lg text-customRed"
                 style={{
                   fontWeight: 600,
                   fontSize: "18px",
@@ -161,20 +160,21 @@ const Event = () => {
       </div>
 
      
+      </div>
       {isMobile && (
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           {!showAllMobileEvents ? (
             <button
               onClick={handleShowMore}
-              className="px-4 py-2 border rounded text-white bg-blue-600"
-            >
+              className="px-4 py-2 border rounded text-white bg-customRed"
+              >
               Show More
             </button>
           ) : (
             <button
               onClick={handleShowLess}
-              className="px-4 py-2 border rounded text-white bg-blue-600"
-            >
+              className="px-4 py-2 border rounded text-white bg-customRed"
+              >
               Show Less
             </button>
           )}
@@ -186,7 +186,7 @@ const Event = () => {
           <button
             onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
             disabled={currentPage === 1}
-            className="px-4 py-2 border rounded text-white bg-blue-600 disabled:opacity-50"
+            className="px-4 py-2 border rounded text-white bg-customRed disabled:opacity-50"
           >
             &lt; Prev
           </button>
@@ -196,12 +196,13 @@ const Event = () => {
           <button
             onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 border rounded text-white bg-blue-600 disabled:opacity-50"
-          >
+            className="px-4 py-2 border rounded text-white bg-customRed disabled:opacity-50"
+            >
             Next &gt;
           </button>
         </div>
       )}
+            </div>
     </div>
   );
 };
