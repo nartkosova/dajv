@@ -5,6 +5,7 @@ import Slider from "./Slider";
 import LatestNews from "./LatestNews";
 import { useTranslation } from "react-i18next";
 import EREIGNIS from "./EREIGNIS";
+import Event from "../EventComponents/Event";
 
 function Home() {
   const { t: tOurStory } = useTranslation("ourStory");
