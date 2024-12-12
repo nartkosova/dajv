@@ -1,12 +1,12 @@
 {
-  "pages": "Pages",
+  "pages": "Sites",
   "about": "About Us",
-  "latest": "Latest",
+  "latest": "Events",
   "contact": "Contact",
 
   "links": "Other Links",
-  "join": "Join Us",
-  "ask": "Ask Us",
+  "join": "Become a Member",
+  "ask": "Questions",
 
   "privacy": "All Rights Reserved",
   "delivered": "Delivered by"
