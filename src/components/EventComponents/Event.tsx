@@ -44,7 +44,7 @@ const Event = () => {
 
   const mobileEvents = showAllMobileEvents
     ? filteredEvents
-    : filteredEvents.slice(0, 2);
+    : filteredEvents.slice(0, 4);
 
   const eventsToShow = isMobile ? mobileEvents : desktopEvents;
 
@@ -81,9 +81,9 @@ const Event = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl font-bold mb-4">EREIGNIS</h1>
+            <h1 className="text-5xl font-bold mb-4">EREIGNIS</h1> {/* LANGUAGE */}
             <p className="text-lg max-w-2xl mx-auto">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
+              Lorem Ipsum is simply dummy text of the printing and typesetting {/* LANGUAGE */}
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
@@ -92,7 +92,7 @@ const Event = () => {
         </div>
       </div>
       <div className="px-8 lg:px-20 py-20">
-        <div className="flex flex-wrap justify-between items-center space-y-2 md:space-y-0 w-full pb-6">
+        <div className="flex flex-wrap justify-between items-center space-y-2 md:space-y-0 w-full pb-8">
           <div>
             <label htmlFor="filter" className="font-medium">
               Show:
@@ -103,9 +103,9 @@ const Event = () => {
               className="font-medium"
               onChange={handleFilterChange}
             >
-              <option value="All">All</option>
-              <option value="Latest">Latest</option>
-              <option value="Earliest">Earliest</option>
+              <option value="All">All</option> {/* LANGUAGE */}
+              <option value="Latest">Latest</option> {/* LANGUAGE */}
+              <option value="Earliest">Earliest</option> {/* LANGUAGE */}
             </select>
           </div>
 
@@ -123,16 +123,16 @@ const Event = () => {
 
         {/* Event List */}
         <div className="flex justify-center items-center">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-8 justify-items-center">
             {eventsToShow.map((event) => (
               <div
                 key={event.id}
-                className="border rounded-md border-dividers overflow-hidden hover:shadow-xl transition-all duration-300"
-                style={{ maxWidth: "290px", maxHeight: "340px" }}
+                className="border rounded-md border-dividers hover:shadow-xl transition-all duration-300"
+                style={{ maxWidth: "5000px" }}
               >
                 <img
                   src={event.image}
-                  className="w-full h-48 object-cover"
+                  className="object-cover"
                   alt={event.title}
                 />
                 <div className="p-4 flex flex-col">
@@ -166,14 +166,14 @@ const Event = () => {
                 onClick={handleShowMore}
                 className="px-4 py-2 border rounded text-white bg-customRed"
               >
-                Show More
+                Show More {/* LANGUAGE */}
               </button>
             ) : (
               <button
                 onClick={handleShowLess}
                 className="px-4 py-2 border rounded text-white bg-customRed"
               >
-                Show Less
+                Show Less {/* LANGUAGE */}
               </button>
             )}
           </div>
@@ -186,11 +186,14 @@ const Event = () => {
               disabled={currentPage === 1}
               className="px-4 py-2 border rounded text-white bg-customRed disabled:opacity-50"
             >
-              &lt; Prev
+              &lt; Prev {/* LANGUAGE */}
             </button>
-            <span className="flex items-center">
-              Page {currentPage} of {totalPages}
-            </span>
+            <span
+    className="flex items-center justify-center"
+    style={{ width: "130px", textAlign: "center" }}
+  >
+    Page {currentPage} of {totalPages}
+  </span>
             <button
               onClick={() =>
                 handlePageChange(Math.min(currentPage + 1, totalPages))
@@ -198,7 +201,7 @@ const Event = () => {
               disabled={currentPage === totalPages}
               className="px-4 py-2 border rounded text-white bg-customRed disabled:opacity-50"
             >
-              Next &gt;
+              Next &gt; {/* LANGUAGE */}
             </button>
           </div>
         )}
