@@ -25,7 +25,7 @@ export default () => {
   };
 
   return (
-    <div className="relative bg-dividers2 h-screen">
+    <div className="relative bg-dividers2 py-20">
       <div className="text-center mb-8">
         <p className="font-medium text-customRed mb-1 uppercase bg-dividers2">
           {t("board")}

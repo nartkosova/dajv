@@ -5,9 +5,10 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(63, 63, 63) !important;
   width: 20px !important;
   height: 20px !important;
+  /* bottom: 150px !important; */
 }
 
 .swiper-button-next {
