@@ -73,28 +73,33 @@ const EREIGNIS = () => {
       )}
 
       <NavLink to={`/${language}/events`}>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "transparent",
-            ":hover": {
-              backgroundColor: "primary.main",
-              color: "background.default",
-            },
-            py: 1.5,
-            px: 5,
-            borderRadius: "5px",
-            fontSize: "1.2rem",
-            textTransform: "none",
-            color: "primary.main",
-
-            border: "solid",
-            borderColor: "primary.main",
-            borderWidth: "1px",
-          }}
-        >
-          {t("read_more")}
-        </Button>
+      <Button
+    variant="contained"
+    onClick={() => {
+      window.scrollTo({
+        top: 0,
+       
+      });
+    }}
+    sx={{
+      backgroundColor: "transparent",
+      ":hover": {
+        backgroundColor: "primary.main",
+        color: "background.default",
+      },
+      py: 1.5,
+      px: 5,
+      borderRadius: "5px",
+      fontSize: "1.2rem",
+      textTransform: "none",
+      color: "primary.main",
+      border: "solid",
+      borderColor: "primary.main",
+      borderWidth: "1px",
+    }}
+  >
+    {t("read_more")}
+  </Button>
       </NavLink>
     </div>
   );

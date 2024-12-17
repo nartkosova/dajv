@@ -80,6 +80,12 @@ const LatestNews: React.FC = () => {
           <NavLink to={`/${language}/latest`}>
             <Button
               variant="contained"
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                 
+                });
+              }}
               sx={{
                 backgroundColor: "transparent",
                 ":hover": {
