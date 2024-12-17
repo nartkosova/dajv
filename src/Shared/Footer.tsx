@@ -25,12 +25,30 @@ const Footer = () => {
             <h2 className="font-bold mb-2">{t("pages")}</h2>
             <ul className="space-y-2">
               <li>
-                <NavLink to={`/${language}/about`} className="hover:underline">
-                  {t("about")}
-                </NavLink>
+              <NavLink
+  to={`/${language}/about`}
+  className="hover:underline"
+  onClick={() => {
+    window.scrollTo({
+      top: 0,
+    
+    });
+  }}
+>
+  {t("about")}
+</NavLink>
+
               </li>
               <li>
-                <NavLink to={`/${language}/latest`} className="hover:underline">
+                <NavLink 
+                to={`/${language}/latest`} 
+                className="hover:underline"  
+                onClick={() => {
+                window.scrollTo({
+                top: 0,
+                
+    });
+  }}>
                   {t("latest")}
                 </NavLink>
               </li>
@@ -38,6 +56,11 @@ const Footer = () => {
                 <NavLink
                   to={`/${language}/contact`}
                   className="hover:underline"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                    });
+                  }}
                 >
                   {t("contact")}
                 </NavLink>

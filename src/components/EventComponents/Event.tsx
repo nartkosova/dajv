@@ -73,10 +73,12 @@ const Event = () => {
   return (
     <div>
       <div
-        className="relative bg-cover bg-center h-[500px]"
+        className="relative bg-cover bg-center h-[500px] "
         style={{
+          backgroundColor: "rgba(0, 0, 0, 0.80)",
           backgroundImage:
-            "url('https://s3-alpha-sig.figma.com/img/6c81/60ca/56f3eab7abd619c6f43ad594be3b865a?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JOng4YkyZqzJCvVMd~NiN9EHlqosMoVm8lkj36GsMEmdhnHI1DwawIWE3PZo0rSd35KmHf0RuNuUCVWlw8Dx2I~IHeAQdqWv6ZM7hVuCzoytxbQLXwRnms6bPHWMFCs3mKmBW1ZMC9XmzzObr-q4us5MK2Y8AH1HLwVI1OriQB9blZHeyQajvZV8vwV~jwiPprV~u6iWX1DIlN8mx9JKgmYXf02ai8SByaWAIMMF6Y56ZhCTIrBM6Kjdv6eylA4yy34v~MFaSC1y~4ODygpTs5BfCWftalg5P60NSbifHeuPnr3Z3r0GjBMCq~~OM4pNKdMZy80cyWFaCBdr3yx6bg__')",
+            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/6c81/60ca/56f3eab7abd619c6f43ad594be3b865a?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JOng4YkyZqzJCvVMd~NiN9EHlqosMoVm8lkj36GsMEmdhnHI1DwawIWE3PZo0rSd35KmHf0RuNuUCVWlw8Dx2I~IHeAQdqWv6ZM7hVuCzoytxbQLXwRnms6bPHWMFCs3mKmBW1ZMC9XmzzObr-q4us5MK2Y8AH1HLwVI1OriQB9blZHeyQajvZV8vwV~jwiPprV~u6iWX1DIlN8mx9JKgmYXf02ai8SByaWAIMMF6Y56ZhCTIrBM6Kjdv6eylA4yy34v~MFaSC1y~4ODygpTs5BfCWftalg5P60NSbifHeuPnr3Z3r0GjBMCq~~OM4pNKdMZy80cyWFaCBdr3yx6bg__')",
+            
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
