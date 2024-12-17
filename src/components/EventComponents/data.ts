@@ -1,4 +1,12 @@
-export const initialEvents = [
+interface Events {
+  id: number;
+  image: string;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+}
+const initialEvents: Events[] = [
   {
     id: 1,
     image:
@@ -28,7 +36,8 @@ export const initialEvents = [
   },
   {
     id: 4,
-    image: "https://s3-alpha-sig.figma.com/img/b777/45fc/7ab44e28ec6b6b7d439e38e80a38b865?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFAPczWW9SBHtTmxaBnTd2spsVnhIvq~7RvDl6NwqhgUu~8vbxgXWi4WHHnxHnVqp6BWAJOvRZeYDp-ZRSgo7E1lXute71HyM0pIfBkUhYifFo69LGXgHD22AT~vIAMdmzg~kH0Ud1eNBN98t-Nqc9Mg0ORsxCLWWZiiHM1dIJ2EeodLomx2etbSwtkiwMdYnxFh9r0idtW3cE~eoING01Xi4woOl9Dm14enqQk3VWVo-77pR6nLKoIc1gzjEovRqgfctrGmoB7bABbORp~PEg9uoJ4jZ4bdRKrJ1IoiRO7Ifmuk6j5Z6q8X3NLekAMrX5QCLoF~HABUP8mIFUJQIA__",
+    image:
+      "https://s3-alpha-sig.figma.com/img/b777/45fc/7ab44e28ec6b6b7d439e38e80a38b865?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFAPczWW9SBHtTmxaBnTd2spsVnhIvq~7RvDl6NwqhgUu~8vbxgXWi4WHHnxHnVqp6BWAJOvRZeYDp-ZRSgo7E1lXute71HyM0pIfBkUhYifFo69LGXgHD22AT~vIAMdmzg~kH0Ud1eNBN98t-Nqc9Mg0ORsxCLWWZiiHM1dIJ2EeodLomx2etbSwtkiwMdYnxFh9r0idtW3cE~eoING01Xi4woOl9Dm14enqQk3VWVo-77pR6nLKoIc1gzjEovRqgfctrGmoB7bABbORp~PEg9uoJ4jZ4bdRKrJ1IoiRO7Ifmuk6j5Z6q8X3NLekAMrX5QCLoF~HABUP8mIFUJQIA__",
     title: "Yoga Retreat",
     date: "2024-12-04",
     location: "Pristina, Kosovo",
@@ -63,7 +72,8 @@ export const initialEvents = [
   },
   {
     id: 8,
-    image: "https://s3-alpha-sig.figma.com/img/b777/45fc/7ab44e28ec6b6b7d439e38e80a38b865?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFAPczWW9SBHtTmxaBnTd2spsVnhIvq~7RvDl6NwqhgUu~8vbxgXWi4WHHnxHnVqp6BWAJOvRZeYDp-ZRSgo7E1lXute71HyM0pIfBkUhYifFo69LGXgHD22AT~vIAMdmzg~kH0Ud1eNBN98t-Nqc9Mg0ORsxCLWWZiiHM1dIJ2EeodLomx2etbSwtkiwMdYnxFh9r0idtW3cE~eoING01Xi4woOl9Dm14enqQk3VWVo-77pR6nLKoIc1gzjEovRqgfctrGmoB7bABbORp~PEg9uoJ4jZ4bdRKrJ1IoiRO7Ifmuk6j5Z6q8X3NLekAMrX5QCLoF~HABUP8mIFUJQIA__",
+    image:
+      "https://s3-alpha-sig.figma.com/img/b777/45fc/7ab44e28ec6b6b7d439e38e80a38b865?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oFAPczWW9SBHtTmxaBnTd2spsVnhIvq~7RvDl6NwqhgUu~8vbxgXWi4WHHnxHnVqp6BWAJOvRZeYDp-ZRSgo7E1lXute71HyM0pIfBkUhYifFo69LGXgHD22AT~vIAMdmzg~kH0Ud1eNBN98t-Nqc9Mg0ORsxCLWWZiiHM1dIJ2EeodLomx2etbSwtkiwMdYnxFh9r0idtW3cE~eoING01Xi4woOl9Dm14enqQk3VWVo-77pR6nLKoIc1gzjEovRqgfctrGmoB7bABbORp~PEg9uoJ4jZ4bdRKrJ1IoiRO7Ifmuk6j5Z6q8X3NLekAMrX5QCLoF~HABUP8mIFUJQIA__",
     title: "Photography Workshop",
     date: "2024-12-08",
     location: "Pristina, Kosovo",
@@ -261,3 +271,5 @@ export const initialEvents = [
     description: "Celebrate in style.",
   },
 ];
+
+export default initialEvents;

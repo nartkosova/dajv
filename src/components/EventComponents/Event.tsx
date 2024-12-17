@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { initialEvents } from "./data";
+import initialEvents from "./data";
 import { useLocation } from "react-router-dom";
 
 const Event = () => {
@@ -69,8 +69,7 @@ const Event = () => {
   const handleShowLess = () => {
     setShowAllMobileEvents(false);
   };
-
-  return (
+return (
     <div>
       <div
         className="relative bg-cover bg-center h-[500px] "
@@ -79,6 +78,26 @@ const Event = () => {
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-alpha-sig.figma.com/img/6c81/60ca/56f3eab7abd619c6f43ad594be3b865a?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JOng4YkyZqzJCvVMd~NiN9EHlqosMoVm8lkj36GsMEmdhnHI1DwawIWE3PZo0rSd35KmHf0RuNuUCVWlw8Dx2I~IHeAQdqWv6ZM7hVuCzoytxbQLXwRnms6bPHWMFCs3mKmBW1ZMC9XmzzObr-q4us5MK2Y8AH1HLwVI1OriQB9blZHeyQajvZV8vwV~jwiPprV~u6iWX1DIlN8mx9JKgmYXf02ai8SByaWAIMMF6Y56ZhCTIrBM6Kjdv6eylA4yy34v~MFaSC1y~4ODygpTs5BfCWftalg5P60NSbifHeuPnr3Z3r0GjBMCq~~OM4pNKdMZy80cyWFaCBdr3yx6bg__')",
             
+        }}
+      />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-5xl font-bold mb-4">EREIGNIS</h1> {/* LANGUAGE */}
+            <p className="text-lg max-w-2xl mx-auto">
+              Lorem Ipsum is simply dummy text of the printing and typesetting {/* LANGUAGE */}
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+        </div>
+
+    <div>
+      <div
+        className="relative bg-cover bg-center h-[500px]"
+        style={{
+          backgroundImage:
+            "url('https://s3-alpha-sig.figma.com/img/6c81/60ca/56f3eab7abd619c6f43ad594be3b865a?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JOng4YkyZqzJCvVMd~NiN9EHlqosMoVm8lkj36GsMEmdhnHI1DwawIWE3PZo0rSd35KmHf0RuNuUCVWlw8Dx2I~IHeAQdqWv6ZM7hVuCzoytxbQLXwRnms6bPHWMFCs3mKmBW1ZMC9XmzzObr-q4us5MK2Y8AH1HLwVI1OriQB9blZHeyQajvZV8vwV~jwiPprV~u6iWX1DIlN8mx9JKgmYXf02ai8SByaWAIMMF6Y56ZhCTIrBM6Kjdv6eylA4yy34v~MFaSC1y~4ODygpTs5BfCWftalg5P60NSbifHeuPnr3Z3r0GjBMCq~~OM4pNKdMZy80cyWFaCBdr3yx6bg__')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -209,7 +228,9 @@ const Event = () => {
         )}
       </div>
     </div>
+    </div>
   );
-};
+}
+
 
 export default Event;

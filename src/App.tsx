@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   useParams,
   Navigate,
+  useNavigate,
 } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./components/HomeComponents/Home";
@@ -16,20 +17,25 @@ import i18n from "./i18n";
 import About from "./components/AboutComponents/About";
 import Latest from "./components/LatestComponents/Latest";
 import Event from "./components/EventComponents/Event";
+import NewsPage from "./components/LatestComponents/NewsPage";
+import EventsPage from "./components/EventComponents/EventsPage";
+
+const validLangs = ["en", "de", "al"];
 
 const LanguageWrapper = ({ children }: { children: React.ReactNode }) => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const validLangs = ["en", "de", "al"];
     if (lang && validLangs.includes(lang.toLowerCase())) {
       i18n.changeLanguage(lang.toLowerCase());
     } else {
+      // If invalid language, default to German
       i18n.changeLanguage("de");
-      <Navigate to="/de" />;
+      navigate("/de", { replace: true });
     }
-  }, [lang, i18n]);
+  }, [lang, i18n, navigate]);
 
   return <>{children}</>;
 };
@@ -41,6 +47,10 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
+            {/* Redirect root to default language */}
+            <Route path="/" element={<Navigate to="/de" replace />} />
+
+            {/* Language-specific routes */}
             <Route
               path="/:lang"
               element={
@@ -74,6 +84,14 @@ function App() {
               }
             />
             <Route
+              path="/:lang/latest/:title"
+              element={
+                <LanguageWrapper>
+                  <NewsPage />
+                </LanguageWrapper>
+              }
+            />
+            <Route
               path="/:lang/events"
               element={
                 <LanguageWrapper>
@@ -81,13 +99,16 @@ function App() {
                 </LanguageWrapper>
               }
             />
-            <Route path="/" element={<Navigate to="/de" replace />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/latest" element={<Latest />} />
-            <Route path="/events" element={<Event />} />
-            <Route path="/:lang" element={<Home />} />
+            <Route
+              path="/:lang/events/:title"
+              element={
+                <LanguageWrapper>
+                  <EventsPage />
+                </LanguageWrapper>
+              }
+            />
+            {/* Fallback for any invalid route */}
+            <Route path="*" element={<Navigate to="/de" replace />} />
           </Routes>
           <Footer />
         </BrowserRouter>
