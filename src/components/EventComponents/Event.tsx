@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { initialEvents } from "./data";
+import initialEvents from "./data";
 import { useLocation } from "react-router-dom";
 
 const Event = () => {
@@ -70,7 +70,11 @@ const Event = () => {
     setShowAllMobileEvents(false);
   };
 
-  return (
+  if (!initialEvents.length) {
+    return <div className="flex justify-center items-center h-52">
+      <h1 className="font-semibold text-lg mt-2">Events will be published soon!</h1> {/*LANGUAGE REQUIRED*/}
+      </div> 
+  } else return (
     <div>
       <div
         className="relative bg-cover bg-center h-[500px]"
