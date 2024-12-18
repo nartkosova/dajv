@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       sx={{
         position: "relative",
         height: "60vh",
-        backgroundImage: `url("https://s3-alpha-sig.figma.com/img/57fc/2715/2abfcd0ec95c1b880470b8f0253a64b5?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NRZf54-5gLs8z3EcFZQAcI83GbCtOVUTHP66g6BdzA8Eti4c2fEsN31hXgh2eUUfflenL1d7k2w~IoYSqucP3l6UBJrN6SmPqciiy1QsYwhPz4kPYrINZajYwQpbgzh0WVAY2N8ppKS~FvK5P7rqyG-hPhk5jQyZjS3qSKZDhyCPn0CyeyTZVYm3ujPvg5Cch1OfnGrPL01mlklqQGJvckLfz3L62GX791ylhTANV4ZsKmWo54sWYUEPDiXLtST9CGSfCobjkkk014mahL95pmW0yr76MGyp4Duvwj94nsgfO7LRY56YtPusCUxB7kXJIqRpElPh8EkpdEIbz28U2g__")`,
+        backgroundImage: `url("https://s3-alpha-sig.figma.com/img/57fc/2715/2abfcd0ec95c1b880470b8f0253a64b5?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MRviwVvkxyXfeRETnz2jU9iPekjvREjQAyA8j8qCFLqvfP2vwo3VAmxn6w60b7oH6H8935o-yaHTCHZTYTeUYsjz~-WmQr8UEJ89-~smoXwkK~vQGHEd9rkdBbLssyv3uQPwIEFWGZpxiKozOyFxdqRw2PXA-hIsLd3-YAcUXTPjJB3OQWER~cQbSI985EWbD4wnwXdsESIsHQDH1wsHKxn9Ppr7W3G8zD5OVMU8TzfR3nl12cYEwUoQ6Rdo6SaRHNDiUMUE2KNNF7YJu6B34oD4aYZ-QfRnlWOShPQid3RJYtmmCe83LNADBOhCfhJFAhupssrYPZw6j47F5nPUvw__")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
