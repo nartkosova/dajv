@@ -3,12 +3,19 @@
 @tailwind utilities;
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+.swiper-container {
+  display: flex !important;
+  justify-content: space-between !important; /* Ensure slides have equal space */
+}
+
 .swiper-button-next,
 .swiper-button-prev {
-  color: rgb(63, 63, 63) !important;
+  color: rgb(255, 255, 255) !important;
+  /* color: #11111181; */
   width: 20px !important;
   height: 20px !important;
-  /* bottom: 150px !important; */
+  position: absolute !important; /* Position absolute to move the buttons */
+  bottom: -30px !important; /* Place the buttons below the slider */
 }
 
 .swiper-button-next {
@@ -17,4 +24,8 @@
 
 .swiper-button-prev {
   left: 10px; /* Adjust position */
+}
+.swiper-pagination-bullet-active {
+  background-color: #A01717 !important;
+  scale: 130%;
 }

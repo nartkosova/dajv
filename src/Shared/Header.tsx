@@ -77,7 +77,7 @@ const Header = () => {
           </div>
           <div>
             <NavLink
-              to={`/${language}/latest`}
+              to={`/${language}/news`}
               className="block py-2 px-4 md:inline-block hover:text-[#A01717] text-[18px] font-normal hover:font-bold"
             >
               {t("latest")}

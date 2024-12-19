@@ -76,7 +76,7 @@ function App() {
               }
             />
             <Route
-              path="/:lang/latest"
+              path="/:lang/news"
               element={
                 <LanguageWrapper>
                   <Latest />
@@ -84,7 +84,7 @@ function App() {
               }
             />
             <Route
-              path="/:lang/latest/:title"
+              path="/:lang/news/:title"
               element={
                 <LanguageWrapper>
                   <NewsPage />
