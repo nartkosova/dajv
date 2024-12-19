@@ -12,18 +12,6 @@ export default () => {
   const swiperRef = useRef<any>(null);
   const { t } = useTranslation("home");
 
-  const handleNextSlide = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
-
-  const handlePrevSlide = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-
   return (
     <div className="relative bg-dividers2 py-20">
       <div className="text-center mb-8">
@@ -44,45 +32,71 @@ export default () => {
             320: {
               slidesPerView: 1,
             },
+            470: {
+              slidesPerView: 1.5,
+            },
             640: {
               slidesPerView: 2,
             },
+            857: {
+              slidesPerView: 2.5,
+            },
             1024: {
+              slidesPerView: 3,
+            },
+            1256: {
               slidesPerView: 3.5,
+            },
+            1512: {
+              slidesPerView: 4,
             },
           }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper: any) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
             <img
-              src="https://s3-alpha-sig.figma.com/img/738c/423d/f0e9814614aabaa22389f52a3d144969?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aO1zE5efjX5xSD404QwONiRv327~0f377sc3AWO62yOCRNgx6jZi0EeueLW6KHzICkhS7vEvS0uZfemZVv31zpkrKHmIFj332RPuLqny1BHsz6PFMt-OUHm76sc0vwtywFPUBPYRl1OZU7KCVSuKsI1S0xBDVSbtvCe15Y5dAcskzCczbyLMWkt7aB06gneqvuPXAyaEAJYIbT8B1yGga59sGVSX0cmvWlluoA-M5NiMSGFojCadvxMbPDJljQ09Av2Js1kq1Huphy83vhWstEJJYGqQVh4gvGBJLbjL7YlLQaFPhgd4Yvjsihba~WwaBSr~MaMzrrmBbMWCeGEYgw__"
+              src="https://s3-alpha-sig.figma.com/img/738c/423d/f0e9814614aabaa22389f52a3d144969?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dn5xYSmSkmL9vGdGLd3EybKVzTTHiG9EgFYxvJ21bqLPTlQx-IBtJatCtVCXkv-~zCuDSIqCMz70l-dC6kvN4nXep2UPMIkjBf34I~SsJScXdKFC5Hug-PXpB84LrVKk4zJpnWu1ve3vbp2M5I-ipFFqGtsslnLP2R6swcTbmJD2xIChWB8jNKow828fOjXnbOF8~av8m3HIKnbqip3mtcj7pu5bMC82OUdrpGAko98~U9DMQ8kb5BM-I~gEVeX9E6S4U3VKSihwsYxaFt7r5a5pm80AYCfiZJ5al3WFL5ZyNm3tkLTuGnbboCOi0Yx5R5FY4GB0NXexTfjqup6y2A__"
               alt="Slide 1"
-              className="w-[404px] h-[536px] object-cover"
+              className="w-full h-[536px] 2xl:h-[636px] object-cover"
             />
+            <div className="absolute bottom-0 w-full h-[70%] bg-gradient-to-t from-text via-slide to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-lg font-semibold uppercase">Full name</h3>
+            <p className="text-sm">Position</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://s3-alpha-sig.figma.com/img/1554/27ea/4976c364e681cd8e8d6ae5b6a58818f2?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WL1zx3cYyhmv1GJBm873zTtzmzr4fR-FC6BjPrhF0mdUh1Ybc00QWPksYSvug1eSNJq4TiF1BbKEU6s28Q7L1~Tybvav-cXDDkX9kQtxUCfA2Oiu9ohFIyE6ibo8LdBvaMUu~FKvn9USkhXNogeVB~Jfx33uTS0K5pfcwip9BqbzDS~3uYduQhb0vvqG3Y0UjvrF~Wg6xpN4sfnaVlM1gILM0jT~R3DGhwPv4s4F6AepY7e18QgyncBFS8P0XMqORxU1UssTMxrcsSgXFKnv2fl1Jt69762yuknRyNMtY6i07mBr-Yyuwoqs43v9ffY2XHfhLWj8~JK385DGJeLZVg__"
+              src="https://s3-alpha-sig.figma.com/img/1554/27ea/4976c364e681cd8e8d6ae5b6a58818f2?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UKiDqti9OpoBh0e9XmzQMMLaMTNvOadybUa8eAmRb9LARyoZm7BfzXlpL3mb5R6py7O8p1ruHzouxu2v83H5Cx3xyKALrC~xrECYSkqhgxfza1AoaSqYIco0f6ibE7lNHOxFMFQyuX9pfLRveRU0mxK6-8fzjDXeCkUCfwEcsKDf-nqOVCGQmx3HdWUkRW6QXdrdJi3BznMAwzTnJ8hNEzeI8v3qg0kz7icqX~~n6xvLH-TFl1KSxEtvi~CKddBnsA4zBCW14gDkt~yrKTJUrGZXdMSpPkzylAwy4VU~WLSeq581b~ltKOqLKZLFyxklMRUKUovEPVnW2cVlk2k-rA__"
               alt="Slide 2"
-              className="w-[404px] h-[536px] object-cover"
+              className="w-full h-[536px] 2xl:h-[636px] object-cover"
             />
+                        <div className="absolute bottom-0 w-full h-[70%] bg-gradient-to-t from-text via-slide to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-lg font-semibold uppercase">Full name</h3>
+            <p className="text-sm">Position</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://s3-alpha-sig.figma.com/img/ad8b/a92c/9e252417e19320a3688d65c4c95a8751?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mfeINBu3dY-TvwbTigHC6ZIaK2X0pbBCfjhsnht2n6CzTTVzCBeEKrSWLN03a3kZra0dUUpEMBf302bsw5ufi2RHCe7rqAAh~x8NloLiLRtDwx7cvJLCPAPl4NXeddJWvc7tvGtDSvRt2lPfd3RGpyGbjyf--tfa57vIr51cva4G5M1RNHaiZXPqbuZMkCS6VbqTC1ov9saZv5ygv9u~LQyVu-vxdwvGy2hw0ZqTdglxGRIIoXrUsLOiv9B4u4PbogxW5G20IdVJFyA8mK5jrexwX2p3ENS6fFHSVteYB9CJCmLw22pfKyEyMmWJgbsqczNvp0-nenV507qPXsUstg__"
+              src="https://s3-alpha-sig.figma.com/img/ad8b/a92c/9e252417e19320a3688d65c4c95a8751?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z4fpuyebcfkVW2amKWtH5fRxW5xk9O9SQK~VHQ5PzvQN0lhdYto7kw72spiCkKbUYzQCKKC5wV-r7jMVZ9-sWTwKHi0Ah7vlSKL5eCTXRTkgtR4LMEr12GQipxIS68AdIA65uUFZcPnwiJ6NpaBJcm8xGNPXh0cDvEVJlroLmdPSHuFhCkEv8WoS7f1~gCuhQIIb0PHX-~i6yBDcGUv7-IFZ2sPDvQHpWaVx80pQ2pi6D8IGPIB~J~dWGUfK2Lepl~eay4V4m1ESfzb0ZZu8is4zyPAu8m4MW6d8VQibzs6b0EYcX9EDy5lPuQq60p30c9Wc5Y3sNot0jQU9mP-l8g__"
               alt="Slide 3"
-              className="w-[404px] h-[536px] object-cover"
+              className="w-full h-[536px] 2xl:h-[636px] object-cover"
             />
+                        <div className="absolute bottom-0 w-full h-[70%] bg-gradient-to-t from-text via-slide to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-lg font-semibold uppercase">Full name</h3>
+            <p className="text-sm">Position</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://s3-alpha-sig.figma.com/img/1554/27ea/4976c364e681cd8e8d6ae5b6a58818f2?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WL1zx3cYyhmv1GJBm873zTtzmzr4fR-FC6BjPrhF0mdUh1Ybc00QWPksYSvug1eSNJq4TiF1BbKEU6s28Q7L1~Tybvav-cXDDkX9kQtxUCfA2Oiu9ohFIyE6ibo8LdBvaMUu~FKvn9USkhXNogeVB~Jfx33uTS0K5pfcwip9BqbzDS~3uYduQhb0vvqG3Y0UjvrF~Wg6xpN4sfnaVlM1gILM0jT~R3DGhwPv4s4F6AepY7e18QgyncBFS8P0XMqORxU1UssTMxrcsSgXFKnv2fl1Jt69762yuknRyNMtY6i07mBr-Yyuwoqs43v9ffY2XHfhLWj8~JK385DGJeLZVg__"
+              src="https://s3-alpha-sig.figma.com/img/ad8b/a92c/9e252417e19320a3688d65c4c95a8751?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z4fpuyebcfkVW2amKWtH5fRxW5xk9O9SQK~VHQ5PzvQN0lhdYto7kw72spiCkKbUYzQCKKC5wV-r7jMVZ9-sWTwKHi0Ah7vlSKL5eCTXRTkgtR4LMEr12GQipxIS68AdIA65uUFZcPnwiJ6NpaBJcm8xGNPXh0cDvEVJlroLmdPSHuFhCkEv8WoS7f1~gCuhQIIb0PHX-~i6yBDcGUv7-IFZ2sPDvQHpWaVx80pQ2pi6D8IGPIB~J~dWGUfK2Lepl~eay4V4m1ESfzb0ZZu8is4zyPAu8m4MW6d8VQibzs6b0EYcX9EDy5lPuQq60p30c9Wc5Y3sNot0jQU9mP-l8g__"
               alt="Slide 4"
-              className="w-[404px] h-[536px] object-cover"
+              className="w-full h-[536px] 2xl:h-[636px] object-cover"
             />
+                        <div className="absolute bottom-0 w-full h-[70%] bg-gradient-to-t from-text via-slide to-transparent text-white flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-lg font-semibold uppercase">Full name</h3>
+            <p className="text-sm">Position</p>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>

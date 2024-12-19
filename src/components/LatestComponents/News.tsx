@@ -136,8 +136,18 @@ const News: React.FC = () => {
                   {Blog.description}
                 </p>
                 <NavLink
-                  to={`/${language}/latest/${encodeURIComponent(Blog.title.replace(/\s+/g, "-").toLowerCase())}`}
+                         to={`/${language}/news/${encodeURIComponent(
+                          Blog.title
+                            .replace(/[^a-zA-Z0-9 ]/g, "")
+                            .replace(/\s+/g, "-")
+                            .toLowerCase(),
+                        )}`}
                   className="text-customRed font-medium mt-4 inline-block"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                    });
+                  }}
                 >
                   Read More {/*LANGUAGE REQUIRED*/}
                 </NavLink>
@@ -178,7 +188,7 @@ const News: React.FC = () => {
         {!isMobile && (
           <div className="flex justify-center space-x-4 my-8">
             <button
-              onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+              onClick={() => {handlePageChange(Math.max(currentPage - 1, 1))}}
               disabled={currentPage === 1}
               className="px-4 py-2 border rounded text-white bg-customRed disabled:opacity-50"
             >

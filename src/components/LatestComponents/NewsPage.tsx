@@ -24,7 +24,7 @@ const NewsPage: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center bg-white-100">
+    <div className="flex flex-col justify-center items-start bg-white-100">
       <Box
         sx={{
           position: "relative",
@@ -71,7 +71,7 @@ const NewsPage: React.FC = () => {
               maxWidth: "750px",
             }}
           >
-            {t("18 December 2024")}
+            {post.date}
           </Typography>
 
           <Typography
@@ -85,82 +85,80 @@ const NewsPage: React.FC = () => {
               textTransform: "uppercase",
             }}
           >
-            {t("Lorem Ipsum is simply ")}
+           {post.title}
           </Typography>
-          <p className="text-lg max-w-4xl mb-8 px-4">{t("Topic")}</p>
+          <p className="text-lg max-w-4xl mb-8 px-4">{post.topic}</p>
         </Box>
       </Box>
 
-      <div className="flex flex-col justify-center items-center bg-white-100 py-10 px-10 lg:px-20">
-        <div className="flex flex-col justify-center lg:w-1/1 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-center">
-          <p className="font-medium text-customRed mb-1 uppercase">{""}</p>
+      <div className="flex flex-col justify-center items-start bg-white-100 py-10 px-8 lg:px-20">
+        <div className="flex flex-col justify-center lg:w-1/1 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-start">
           <div className="flex items-center">
             <img
               src="https://via.placeholder.com/30"
+              alt="placeholder"
               className="w-12 h-12 rounded-full mr-2"
             />
             <div className="flex flex-col">
-              <span className="font-montserrat font-medium  text-lg mt-2">
-                PUBLISHER
+              <span className="font-montserrat font-medium uppercase text-lg mt-2">
+              {post.publisher}
               </span>
-              <span>{"18.12.2024"}</span>
+              <span>{post.date}</span>
             </div>
           </div>
           <p className="text-lg font-montserrat font-medium  mt-2">
-            {
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including."
-            }
+            {post.description}
           </p>
         </div>
-      </div>
+
       <div className="flex flex-col">
-        <div className="flex flex-col justify-center items-center bg-white-100 py-2 px-2 lg:px-20">
-          <div className="flex flex-col justify-center lg:w-1/1 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-center">
+        <div className="flex flex-col justify-center items-center ">
+          <div className="flex flex-col justify-center lg:w-1/1 text-left text-text  mb-16 lg:mb-0 self-start">
             <h2 className="font-medium text-lg py-5">
-              {"Lorem Ipsum is simply dummy text of the printing"}
+              SEC TITLE
             </h2>
             <p className="text-lg">
-              {
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-              }
+            {post.description}
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center bg-white-100 py-2 px-2 lg:px-20">
-          <div className="flex flex-col justify-center lg:w-1/1 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-center">
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center lg:w-1/1 text-left text-text mb-16 lg:mb-0 self-start">
             <h2 className="font-medium text-lg  py-5 ">
-              {"Lorem Ipsum is simply dummy text of the printing"}
+              THIRD T
             </h2>
             <p className="text-lg">
-              {
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-              }
+            {post.description}
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center bg-white-100 py-2 px-2 lg:px-20">
-          <div className="flex flex-col justify-start lg:w-1/1 text-left text-text lg:pr-12 mb-16 lg:mb-0 self-start">
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-start lg:w-1/1 text-left text-text mb-16 lg:mb-0 self-start">
             <h2 className="font-medium text-lg  py-5">
-              {"Lorem Ipsum is simply dummy text of the printing"}
+              4 T
             </h2>
-            <p className="text-lg mb-8">
-              {
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-              }
+            <p className="text-lg">
+            {post.description}
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-start bg-white-100 py-5 pb-20 lg:px-20">
+        <div className="flex flex-col justify-start items-start bg-white-100 py-6">
           <NavLink
-          to={`/${language}/latest`}
+          to={`/${language}/news`}
           >
-          <button className="text-customRed flex flex-row items-center ">
+          <button className="text-customRed flex flex-row items-center"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+              });
+            }}>
             <IoIosArrowBack size={23} />
             Go Back
           </button>
           </NavLink>
         </div>
       </div>
+    </div>
     </div>
   );
 };

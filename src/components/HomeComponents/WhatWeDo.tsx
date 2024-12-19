@@ -1,26 +1,30 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import groupIcon from "../../assets/group.png"
+import letterIcon from "../../assets/letter.png"
+import docIcon from "../../assets/document.png"
+import graduateIcon from "../../assets/graduate.png"
 
 const WhatWeDo: React.FC = () => {
   const { t } = useTranslation("home");
   const features = [
     {
-      icon: "fas fa-lightbulb",
+      icon: groupIcon,
       title: t("1"),
       description: t("1_content"),
     },
     {
-      icon: "fas fa-leaf",
+      icon: letterIcon,
       title: t("2"),
       description: t("2_content"),
     },
     {
-      icon: "fas fa-heart",
+      icon: docIcon,
       title: t("3"),
       description: t("3_content"),
     },
     {
-      icon: "fas fa-chart-line",
+      icon: graduateIcon,
       title: t("4"),
       description: t("4_content"),
     },
@@ -38,15 +42,18 @@ const WhatWeDo: React.FC = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-11">
+        <div className="grid flex-wrap justify-center gap-11 md:grid-cols-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col justify-center bg-white rounded-md p-4 hover:shadow-xl transition-all duration-300 border self-center border-dividers max-w-80 lg:max-w-xl min-h-80 items-center"
-              // style={{ maxWidth: "600px", minHeight: "314px" }}
+              className="flex flex-col justify-center bg-white rounded-md p-4 hover:shadow-xl transition-all duration-300 border self-center border-dividers items-center space-y-4"
+              style={{ maxWidth: "1200px", minHeight: "314px", maxHeight: "350px" }}
             >
-              <div className={`text-customRed text-6xl self-start`}>
-                <i className={feature.icon}></i>
+              <div className={`size-8 self-start item`}>
+                <img 
+                src={feature.icon}
+                alt={feature.icon}
+                ></img>
               </div>
               <div className="flex flex-col justify-start">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">
